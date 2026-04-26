@@ -43,7 +43,7 @@ kw_origins AS(
     if(max(if(JSONExtractString(_event_data,'nlu_keyword_name') LIKE 'Hola%',1,0))=1,'Meta',
       if(max(if(JSONExtractString(_event_data,'nlu_keyword_name') IN(
         'Quiero informaci\u00f3n sobre el servicio de ahorro energ\u00e9tico',
-        'Vull informaci\u00f3 sobre el servei d''estalvi energ\u00e8tic'
+        'Vull informaci\u00f3 sobre el servei d\u0027\u0027estalvi energ\u00e8tic'
       ),1,0))=1,'Landing','WA')) as origen
   FROM PROD_ENT0.ds_messages
   WHERE organization_id='{ORG}' AND action='nlu_keyword'
@@ -241,6 +241,129 @@ LEFT JOIN cg  cgx  ON fc.conversation_id=cgx.conversation_id
 """
 
 
+def sql_raw(s, e):
+    return f"""
+WITH flow_conversations AS(
+  SELECT conversation_id, min(created_at) as fecha FROM PROD_ENT0.ds_messages
+  WHERE organization_id='{ORG}' AND bot_id='{BOT}'
+  AND created_at>='{s}' AND created_at<'{e}'
+  AND JSONExtractString(_event_data,'flow_name')='Servicio Eficiencia Energetica'
+  GROUP BY conversation_id
+),
+kw_origins AS(
+  SELECT conversation_id,
+    if(max(if(JSONExtractString(_event_data,'nlu_keyword_name') LIKE 'Hola%',1,0))=1,'Meta',
+      if(max(if(JSONExtractString(_event_data,'nlu_keyword_name') IN(
+        'Quiero informaci\u00f3n sobre el servicio de ahorro energ\u00e9tico',
+        'Vull informaci\u00f3 sobre el servei d\u0027\u0027estalvi energ\u00e8tic'
+      ),1,0))=1,'Landing','WA')) as origen
+  FROM PROD_ENT0.ds_messages
+  WHERE organization_id='{ORG}' AND action='nlu_keyword'
+  AND created_at>='{s}' AND created_at<'{e}'
+  GROUP BY conversation_id
+),
+df AS(SELECT DISTINCT conversation_id FROM PROD_ENT0.ds_messages
+  WHERE organization_id='{ORG}' AND bot_id='{BOT}' AND created_at>='{s}'
+  AND (action='flow_node' OR action='bot_action')
+  AND JSONExtractString(_event_data,'flow_node_content_id') IN(
+    'Confirmacion_Datos_Factura_Luz','Confirmacion_Datos_Factura_Gas')),
+ed AS(SELECT DISTINCT conversation_id FROM PROD_ENT0.ds_messages
+  WHERE organization_id='{ORG}' AND bot_id='{BOT}' AND created_at>='{s}'
+  AND action='message_sent_by_enduser' AND type IN('document','image')),
+cot AS(SELECT DISTINCT conversation_id FROM PROD_ENT0.ds_messages
+  WHERE organization_id='{ORG}' AND bot_id='{BOT}' AND created_at>='{s}'
+  AND(action='flow_node' OR action='bot_action')
+  AND JSONExtractString(_event_data,'flow_node_content_id') IN(
+    'Quote Received Gas','Quote Received Elec')),
+con AS(SELECT DISTINCT conversation_id FROM PROD_ENT0.ds_messages
+  WHERE organization_id='{ORG}' AND bot_id='{BOT}' AND created_at>='{s}'
+  AND(action='flow_node' OR action='bot_action')
+  AND JSONExtractString(_event_data,'flow_node_content_id') IN(
+    'Contract Received Elec','Contract Received Gas')),
+con_elec AS(SELECT DISTINCT conversation_id FROM PROD_ENT0.ds_messages
+  WHERE organization_id='{ORG}' AND bot_id='{BOT}' AND created_at>='{s}'
+  AND(action='flow_node' OR action='bot_action')
+  AND JSONExtractString(_event_data,'flow_node_content_id')='Contract Received Elec'),
+con_gas AS(SELECT DISTINCT conversation_id FROM PROD_ENT0.ds_messages
+  WHERE organization_id='{ORG}' AND bot_id='{BOT}' AND created_at>='{s}'
+  AND(action='flow_node' OR action='bot_action')
+  AND JSONExtractString(_event_data,'flow_node_content_id')='Contract Received Gas'),
+hi AS(
+  SELECT conversation_id, min(created_at) ht FROM PROD_ENT0.ds_messages
+  WHERE organization_id='{ORG}' AND bot_id='{BOT}' AND created_at>='{s}'
+  AND action='case_created'
+  GROUP BY conversation_id
+),
+ce AS(
+  SELECT conversation_id,
+    max(JSONExtract(_event_data,'custom_fields','Map(String, String)')['eventName']) ev
+  FROM PROD_ENT0.ds_messages
+  WHERE organization_id='{ORG}' AND bot_id='{BOT}'
+  AND created_at>='{s}' AND action='custom'
+  GROUP BY conversation_id
+),
+mh AS(
+  SELECT m.conversation_id,
+    max(if(JSONExtractString(m._event_data,'flow_node_content_id')='Ahorro_Luz_No',1,0)) al,
+    max(if(JSONExtractString(m._event_data,'flow_node_content_id')='Ahorro_Gas_No',1,0)) ag,
+    max(if(JSONExtractString(m._event_data,'flow_node_content_id')='No titular elec',1,0)) nte,
+    max(if(JSONExtractString(m._event_data,'flow_node_content_id')='No titular gas',1,0)) ntg,
+    max(if(JSONExtractString(m._event_data,'flow_node_content_id')=
+      'Handoff_Eficiencia_Energetica_No_Cotizable',1,0)) nc,
+    max(if(JSONExtractString(m._event_data,'flow_node_content_id')=
+      'Handoff_Eficiencia_Energetica_Too_Many_Retries',1,0)) tmr,
+    max(if(JSONExtractString(m._event_data,'flow_node_content_id')=
+      'Energy Efficiency Generic Error',1,0)) ge,
+    max(if(JSONExtractString(m._event_data,'flow_node_content_id')=
+      'Handoff Estalvi Energetic',1,0)) hae
+  FROM PROD_ENT0.ds_messages m
+  INNER JOIN hi h ON m.conversation_id=h.conversation_id
+  WHERE m.organization_id='{ORG}' AND m.bot_id='{BOT}'
+  AND(m.action='flow_node' OR m.action='bot_action')
+  AND m.created_at < h.ht
+  GROUP BY m.conversation_id
+)
+SELECT
+  fc.conversation_id,
+  formatDateTime(fc.fecha, '%Y-%m-%d') as fecha,
+  if(kw.origen='','WA',kw.origen) as origen,
+  if(dfx.conversation_id IS NOT NULL OR edx.conversation_id IS NOT NULL, 1, 0) as factura,
+  if(edx.conversation_id IS NOT NULL, 1, 0) as factura_chat,
+  if(dfx.conversation_id IS NOT NULL, 1, 0) as factura_dades,
+  if(cotx.conversation_id IS NOT NULL, 1, 0) as cotizacion,
+  if(conx.conversation_id IS NOT NULL, 1, 0) as contrato,
+  if(celx.conversation_id IS NOT NULL, 1, 0) as contrato_luz,
+  if(cgasx.conversation_id IS NOT NULL, 1, 0) as contrato_gas,
+  multiIf(
+    h.conversation_id IS NULL,                          'Automatizada',
+    if(cex.ev='','?',cex.ev)='negativeSavings',         'Ahorro negativo',
+    if(cex.ev='','?',cex.ev)='over70Savings',           'Ahorro > 70%',
+    if(cex.ev='','?',cex.ev)='handleInvoiceFileError',  'Error archivo factura',
+    mhx.nc=1,   'No cotizable',
+    mhx.tmr=1,  'Demasiados reintentos',
+    mhx.al=1,   'Sin ahorro (luz)',
+    mhx.ag=1,   'Sin ahorro (gas)',
+    mhx.nte=1,  'No titular (elec)',
+    mhx.ntg=1,  'No titular (gas)',
+    mhx.ge=1,   'Error gen\u00e9rico',
+    mhx.hae=1,  'Handoff Estalvi Energ\u00e8tic',
+    'Handoff - Sin motivo'
+  ) as tipologia
+FROM flow_conversations fc
+LEFT JOIN kw_origins kw    ON fc.conversation_id=kw.conversation_id
+LEFT JOIN df dfx           ON fc.conversation_id=dfx.conversation_id
+LEFT JOIN ed edx           ON fc.conversation_id=edx.conversation_id
+LEFT JOIN cot cotx         ON fc.conversation_id=cotx.conversation_id
+LEFT JOIN con conx         ON fc.conversation_id=conx.conversation_id
+LEFT JOIN con_elec celx    ON fc.conversation_id=celx.conversation_id
+LEFT JOIN con_gas cgasx    ON fc.conversation_id=cgasx.conversation_id
+LEFT JOIN hi h             ON fc.conversation_id=h.conversation_id
+LEFT JOIN ce cex           ON fc.conversation_id=cex.conversation_id
+LEFT JOIN mh mhx           ON fc.conversation_id=mhx.conversation_id
+ORDER BY fc.fecha DESC
+"""
+
+
 def run_period(s, e, label):
     """Run all queries for a given date range."""
     print(f"    funnel ...")
@@ -280,12 +403,17 @@ if __name__ == "__main__":
     weekly  = tb_query(sql_weekly(START, end))
     print(f"    {len(weekly)} rows")
 
+    print("  [5/5] raw conversations ...")
+    raw_data = tb_query(sql_raw(START, end))
+    print(f"    {len(raw_data)} rows")
+
     data = {
         "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "all":    p_all,
         "month":  p_month,
         "week":   p_week,
         "weekly": weekly,
+        "raw":    raw_data,
     }
 
     with open("data.json", "w", encoding="utf-8") as f:
