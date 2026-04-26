@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Estalvi EnergÃ¨tic Â· RACC Analytics</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.js"></script>
+<style>
+/* âââ TOKENS âââââââââââââââââââââââââââââââââââââââââââ */
+:root {
+  --hb-900:#1B0E3C; --hb-800:#2D1B69; --hb-600:#4C1D95;
+  --hb-500:#7B4FFB; --hb-400:#9D78FC; --hb-100:#EDE9FE;
+  --bg:#F4F6F9; --surface:#FFFFFF;
+  --border:#E5E7EB; --border-light:#F3F4F6;
+  --text-primary:#111827; --text-secondary:#6B7280; --text-muted:#9CA3AF;
+  --green:#10B981; --green-bg:#ECFDF5;
+  --blue:#3B82F6;  --blue-bg:#EFF6FF;
+  --orange:#F59E0B; --orange-bg:#FFFBEB;
+  --red:#EF4444;   --red-bg:#FEF2F2;
+  --radius:10px; --shadow:0 1px 4px rgba(0,0,0,.08);
+  font-size:14px;
+}
+"{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--text-primary);min-height:100vh}
+
+/* âââ GATE âââââââââââââââââââââââââââââââââââââââââââââ */
+#gate{position:fixed;inset:0;background:var(--hb-900);display:flex;align-items:center;justify-content:center;z-index:999}
+.gate-box{background:#fff;border-radius:16px;padding:40px;width:380px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+.gate-logo{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:28px}
+.gate-logo .bolt{font-size:2rem}
+.gate-logo span{font-size:1.3rem;font-weight:800;color:var(--hb-900)}
+.gate-box h2{font-size:1rem;color:var(--text-secondary);margin-bottom:24px;font-weight:400}
+.gate-box input{width:100%;padding:12px 16px;border:2px solid var(--border);border-radius:8px;font-size:.95rem;outline:none;transition:border-color .2s;margin-bottom:12px}
+.gate-box input:focus{border-color:var(--hb-500)}
+.gate-btn{width:100%;padding:12px;background:var(--hb-500);color:#fff;border:none;border-radius:8px;font-size:.95rem;font-weight:600;cursor:pointer;transition:background .2s}
+.gate-btn:hover{background:var(--hb-600)}
+.gate-err{color:var(--red);font-size:.82rem;margin-top:8px;display:none}
+
+/* âââ HEADER âââââââââââââââââââââââââââââââââââââââââââ */
+#app{display:none;flex-direction:column;min-height:100vh}
+header{background:var(--hb-900);color:#fff;padding:0 24px;height:56px;display:flex;align-items:center;gap:16px;flex-shrink:0}
+.hdr-logo{display:flex;align-items:center;gap:8px;font-size:1rem;font-weight:700;letter-spacing:-.01em}
+.hdr-logo .bolt{font-size:1.4rem}
+.hdr-divider{width:1px;height:20px;background:rgba(255,255,255,.2);margin:0 4px}
+.hdr-title{font-size:.88rem;opacity:.8;font-weight:400}
+.hdr-badge{margin-left:auto;background:rgba(123,79,251,.35);border:1px solid rgba(123,79,251,.5);color:var(--hb-400);padding:3px 10px;border-radius:20px;font-size:.72rem;font-weight:600;letter-spacing:.04em}
+.hdr-logout{background:none;border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.7);padding:4px 12px;border-radius:6px;cursor:pointer;font-size:.75rem;margin-left:12px;transition:all .2s}
+.hdr-logout:hover{border-color:rgba(255,255,255,.6);color:#fff}
+
+/* âââ TOOLBAR ââââââââââââââââââââââââââââââââââââââââââ */
+.toolbar{background:var(--surface);border-bottom:1px solid var(--border);padding:10px 24px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.toolbar-range{font-size:.78rem;color:var(--text-secondary);font-weight:500;display:flex;align-items:center;gap:6px}
+.toolbar-range strong{color:var(--text-primary);font-weight:700}
+.ts{margin-left:auto;font-size:.72rem;color:var(--text-muted);display:flex;align-items:center;gap:6px}
+.ts-dot{width:7px;height:7px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+
+/* âââ MAIN âââââââââââââââââââââââââââââââââââââââââââââ */
+main{padding:20px 24px;flex:1;max-width:1200px;width:100%;margin:0 auto}
+
+/* loading */
+.loading{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px 0;gap:14px;color:var(--text-muted)}
+.spinner{width:32px;height:32px;border:3px solid var(--hb-100);border-top-color:var(--hb-500);border-radius:50%;animation:spin .7s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.err-box{background:var(--red-bg);border:1px solid #FECACA;color:#991B1B;padding:14px 18px;border-radius:var(--radius);font-size:.82rem;word-break:break-word;margin:16px 0}
+
+/* section label */
+.sec-label{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.sec-label::after{content:'';flex:1;height:1px;background:var(--border-light)}
+
+/* KPI cards */
+.kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
+.kpi{background:var(--surface);border-radius:var(--radius);padding:18px 20px;box-shadow:var(--shadow);border:1px solid var(--border-light);position:relative;overflow:hidden}
+.kpi::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:var(--kpi-color,var(--hb-500))}
+.kpi-label{font-size:.72rem;color:var(--text-secondary);font-weight:600;text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px}
+.kpi-value{font-size:2rem;font-weight:800;line-height:1;color:var(--text-primary)}
+.kpi-sub{font-size:.72rem;color:var(--text-muted);margin-top:6px}
+.kpi-pill{display:inline-flex;align-items:center;gap:4px;background:var(--kpi-pill-bg,var(--hb-100));color:var(--kpi-pill-color,var(--hb-600));padding:2px 8px;border-radius:12px;font-size:.7rem;font-weight:700;margin-top:4px}
+
+/* Funnel */
+.funnel-card{background:var(--surface);border-radius:var(--radius);padding:20px 24px;box-shadow:var(--shadow);border:1px solid var(--border-light);margin-bottom:20px}
+.funnel{display:flex;align-items:stretch;gap:0}
+.fstep{flex:1;padding:16px;position:relative}
+.fstep+.fstep{border-left:1px solid var(--border-light)}
+.fstep-label{font-size:.72rem;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
+.fstep-value{font-size:1.8rem;font-weight:800;color:var(--text-primary);line-height:1}
+.fstep-pct{font-size:.78rem;color:var(--text-secondary);margin-top:4px}
+.fstep-bar{height:4px;background:var(--border-light);border-radius:2px;margin-top:12px;overflow:hidden}
+.fstep-bar-fill{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--hb-400),var(--hb-500));transition:width .6s ease}
+.fstep-arrow{position:absolute;right:-10px;top:50%;transform:translateY(-50%);width:20px;height:20px;background:var(--hb-100);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--hb-500);font-size:.8rem;z-index:1}
+
+/* 2-col grid */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px}
+.card{background:var(--surface);border-radius:var(--radius);padding:20px 22px;box-shadow:var(--shadow);border:1px solid var(--border-light)}
+
+/* Origin */
+.ori-item{margin-bottom:14px}
+.ori-item:last-child{margin-bottom:0}
+.ori-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.ori-name{font-size:.82rem;font-weight:600;color:var(--text-primary)}
+.ori-stats{font-size:.75rem;color:var(--text-muted)}
+.bar-track{height:6px;background:var(--border-light);border-radius:3px;overflow:hidden;margin-bottom:4px}
+.bar-fill{height:100%;border-radius:3px;transition:width .6s ease}
+.bar-fill.landing{background:linear-gradient(90deg,#3B82F6,#6366F1)}
+.bar-fill.meta{background:linear-gradient(90deg,#8B5CF6,#EC4899)}
+.bar-fill.wa{background:linear-gradient(90deg,#F59E0B,#EF4444)}
+.ori-conv{font-size:.7rem;color:var(--text-muted)}
+
+/* Invoice split */
+.inv-boxes{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.inv-box{background:var(--border-light);border-radius:8px;padding:16px;text-align:center}
+.inv-val{font-size:1.6rem;font-weight:800;line-height:1}
+.inv-lbl{font-size:.72rem;color:var(--text-muted);margin-top:4px;font-weight:600}
+.inv-sub{font-size:.68rem;color:var(--text-muted);margin-top:2px}
+.inv-box.chat .inv-val{color:var(--blue)}
+.inv-box.bot .inv-val{color:var(--hb-500)}
+
+/* Closure types */
+.tipo-list{display:flex;flex-direction:column;gap:0}
+.tipo-row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--border-light)}
+.tipo-row:last-child{border-bottom:none}
+.tipo-name{font-size:.8rem;color:var(--text-primary);display:flex;align-items:center;gap:8px}
+.tipo-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.tipo-count{font-size:.8rem;font-weight:700;padding:2px 10px;border-radius:12px}
+.tipo-count.g{background:var(--green-bg);color:#065F46}
+.tipo-count.r{background:var(--red-bg);color:#991B1B}
+.tipo-count.o{background:var(--orange-bg);color:#92400E}
+.tipo-count.b{background:var(--blue-bg);color:#1E40AF}
+
+/* Incorrect data */
+.inc-hero{text-align:center;padding:20px 0 12px}
+.inc-num{font-size:3.5rem;font-weight:900;color:var(--red);line-height:1}
+.inc-label{font-size:.85rem;color:var(--text-secondary);margin-top:6px}
+.inc-sub{font-size:.72rem;color:var(--text-muted);margin-top:3px}
+.inc-boxes{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.inc-box{background:var(--red-bg);border-radius:8px;padding:14px;text-align:center}
+.inc-box-val{font-size:1.5rem;font-weight:800;color:var(--red)}
+.inc-box-lbl{font-size:.7rem;color:#991B1B;margin-top:3px;font-weight:600}
+
+/* Chart */
+.chart-card{background:var(--surface);border-radius:var(--radius);padding:20px 22px;box-shadow:var(--shadow);border:1px solid var(--border-light);margin-bottom:20px}
+
+/* footer */
+footer{text-align:center;padding:16px;font-size:.72rem;color:var(--text-muted);border-top:1px solid var(--border-light)}
+</style>
+</head>
+<body>
+
+<!-- ââ PASSWORD GATE ââââââââââââââââââââââââââââââââââ -->
+<div id="gate">
+  <div class="gate-box">
+    <div class="gate-logo">
+      <span class="bolt">â¡</span>
+      <span>Estalvi EnergÃ¨tic</span>
+    </div>
+    <h2>Introdueix la contrasenya per accedir al dashboard</h2>
+    <input type="password" id="pwInput" placeholder="Contrasenya" autocomplete="current-password">
+    <button class="gate-btn" onclick="checkPw()">Accedir â</button>
+    <div class="gate-err" id="gateErr">Contrasenya incorrecta. Torna-ho a intentar.</div>
+  </div>
+</div>
+
+<!-- ââ APP ââââââââââââââââââââââââââââââââââââââââââââ -->
+<div id="app">
+  <header>
+    <div class="hdr-logo">
+      <span class="bolt">â¡</span>
+      Estalvi EnergÃ¨tic
+    </div>
+    <div class="hdr-divider"></div>
+    <span class="hdr-title">RACC Analytics</span>
+    <div class="hdr-badge">DIARI</div>
+    <button class="hdr-logout" onclick="logout()">Tancar sessiÃ³</button>
+  </header>
+
+  <div class="toolbar">
+    <div class="toolbar-range">
+      Dades: <strong>31 gen 2026</strong> â <strong id="dateTo">â</strong>
+    </div>
+    <div class="ts">
+      <span class="ts-dot"></span>
+      <span id="tsLabel">â</span>
+    </div>
+  </div>
+
+  <main>
+    <div id="loadingEl" class="loading">
+      <div class="spinner"></div>
+      <div>Carregant dades...</div>
+    </div>
+    <div id="dashContent" style="display:none">
+
+      <!-- KPIs -->
+      <div class="sec-label">Resum del funnel</div>
+      <div class="kpi-row" id="kpiRow"></div>
+
+      <!-- Funnel -->
+      <div class="funnel-card">
+        <div class="sec-label" style="margin-bottom:16px">Funnel de conversiÃ³</div>
+        <div class="funnel" id="funnelEl"></div>
+      </div>
+
+      <!-- Origin + Invoice -->
+      <div class="grid2">
+        <div class="card">
+          <div class="sec-label">Origen de les converses</div>
+          <div id="oriEl"></div>
+        </div>
+        <div class="card">
+          <div class="sec-label">Enviament de factura</div>
+          <div id="invEl"></div>
+        </div>
+      </div>
+
+      <!-- Closure + Incorrect -->
+      <div class="grid2">
+        <div class="card">
+          <div class="sec-label">Tipologies de tancament</div>
+          <div class="tipo-list" id="tipoEl"></div>
+        </div>
+        <div class="card">
+          <div class="sec-label">Cotitzacions amb dades incorrectes</div>
+          <div id="incEl"></div>
+        </div>
+      </div>
+
+      <!-- Chart -->
+      <div class="chart-card">
+        <div class="sec-label">EvoluciÃ³ setmanal</div>
+        <canvas id="evChart" height="80"></canvas>
+      </div>
+
+    </div>
+  </main>
+  <footer>Dashboard Estalvi EnergÃ¨tic Â· RACC Â· Actualitzat diÃ riament via GitHub Actions</footer>
+</div>
+
+<script>
+/* ââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+   CONFIG â nomÃ©s la contrasenya, cap token exposat
+ââââââââââââââââââââââââââââââââââââââââââââââââââââââ */
+const PASSWORD = 'racc2026';   // â canvia la contrasenya
+
+/* ââ AUTH ââââââââââââââââââââââââââââââââââââââââââââ */
+function checkPw() {
+  const v = document.getElementById('pwInput').value;
+  if (v === PASSWORD) {
+    sessionStorage.setItem('racc_auth','1');
+    document.getElementById('gate').style.display='none';
+    document.getElementById('app').style.display='flex';
+    loadDashboard();
+  } else {
+    document.getElementById('gateErr').style.display='block';
+  }
+}
+function logout() {
+  sessionStorage.removeItem('racc_auth');
+  location.reload();
+}
+document.getElementById('pwInput').addEventListener('keydown', e => { if(e.key==='Enter') checkPw(); });
+if (sessionStorage.getItem('racc_auth')==='1') {
+  document.getElementById('gate').style.display='none';
+  document.getElementById('app').style.display='flex';
+}
+
+/* ââ HELPERS âââââââââââââââââââââââââââââââââââââââââ */
+function fmt(n) { return n == null ? 'â' : Number(n).toLocaleString('ca-ES'); }
+function pct(a,b) { return b > 0 ? (a/b*100).toFixed(1)+'%' : 'â'; }
+
+/* ââ RENDER FUNNEL ââââââââââââââââââââââââââââââââââ */
+function renderFunnel(rows) {
+  const T = {conversaciones:0,factura_total:0,cotitzacions:0,contractes:0};
+  rows.forEach(r => { Object.keys(T).forEach(k => { T[k] += (+r[k]||0); }); });
+
+  const kpiData = [
+    { label:'Converses totals', val:T.conversaciones, sub:'en el perÃ­ode', color:'#7B4FFB', pillBg:'#EDE9FE', pillColor:'#4C1D95', pill:'100%' },
+    { label:'Factura rebuda',   val:T.factura_total,  sub:pct(T.factura_total,T.conversaciones)+' de les converses', color:'#3B82F6', pillBg:'#EFF6FF', pillColor:'#1E40AF', pill:pct(T.factura_total,T.conversaciones) },
+    { label:'Cotitzacions',     val:T.cotitzacions,   sub:pct(T.cotitzacions,T.factura_total)+' de les factures',   color:'#F59E0B', pillBg:'#FFFBEB', pillColor:'#92400E', pill:pct(T.cotitzacions,T.conversaciones) },
+    { label:'Contractacions',   val:T.contractes,     sub:pct(T.contractes,T.cotitzacions)+' de les cotitzacions',  color:'#10B981', pillBg:'#ECFDF5', pillColor:'#065F46', pill:pct(T.contractes,T.cotitzacions) },
+  ];
+  document.getElementById('kpiRow').innerHTML = kpiData.map(k=>`
+    <div class="kpi" style="--kpi-color:${k.color};--kpi-pill-bg:${k.pillBg};--kpi-pill-color:${k.pillColor}">
+      <div class="kpi-label">${k.label}</div>
+      <div class="kpi-value">${fmt(k.val)}</div>
+      <div class="kpi-pill">${k.pill}</div>
+      <div class="kpi-sub">${k.sub}</div>
+    </div>`).join('');
+
+  const steps = [
+    { n:'Converses',     v:T.conversaciones },
+    { n:'Factura rebuda',v:T.factura_total },
+    { n:'CotitzaciÃ³',    v:T.cotitzacions },
+    { n:'ContractaciÃ³',  v:T.contractes },
+  ];
+  const mx = steps[0].v || 1;
+  document.getElementById('funnelEl').innerHTML = steps.map((st,i) => `
+    <div class="fstep">
+      ${i < steps.length-1 ? '<div class="fstep-arrow">âº</div>' : ''}
+      <div class="fstep-label">${st.n}</div>
+      <div class="fstep-value">${fmt(st.v)}</div>
+      <div class="fstep-pct">${i===0?'Inici del flux':('Conv. des del pas anterior: '+pct(st.v,steps[i-1].v))}</div>
+      <div class="fstep-bar"><div class="fstep-bar-fill" style="width:${(st.v/mx*100).toFixed(0)}%"></div></div>
+    </div>`).join('');
+
+  const oriMap = {
+    Landing: ['bar-fill landing','Landing Â· web / WA link'],
+    Meta:    ['bar-fill meta','Meta / ADS'],
+    WA:      ['bar-fill wa','WhatsApp directe'],
+  };
+  document.getElementById('oriEl').innerHTML = rows.map(r => {
+    const p = T.conversaciones > 0 ? (r.conversaciones/T.conversaciones*100).toFixed(1) : '0';
+    const [cls, lbl] = oriMap[r.origen] || ['bar-fill wa', r.origen];
+    return `<div class="ori-item">
+      <div class="ori-header">
+        <span class="ori-name">${lbl}</span>
+        <span class="ori-stats">${fmt(r.conversaciones)} converses Â· ${p}%</span>
+      </div>
+      <div class="bar-track"><div class="${cls}" style="width:${p}%"></div></div>
+      <div class="ori-conv">Cotitz: ${fmt(r.cotitzacions)} Â· Contractes: ${fmt(r.contractes)}</div>
+    </div>`;
+  }).join('');
+
+  const fc = rows.reduce((a,r)=>a+(+r.factura_chat||0),0);
+  const fd = rows.reduce((a,r)=>a+(+r.factura_dades||0),0);
+  document.getElementById('invEl').innerHTML = `
+    <p style="font-size:.78rem;color:var(--text-secondary);margin-bottom:4px">Total factures rebudes: <strong>${fmt(T.factura_total)}</strong></p>
+    <p style="font-size:.7rem;color:var(--text-muted);margin-bottom:14px">Categories no mÃºtuament exclusives</p>
+    <div class="inv-boxes">
+      <div class="inv-box chat">
+        <div class="inv-val">${fmt(fc)}</div>
+        <div class="inv-lbl">ð Chat (WA)</div>
+        <div class="inv-sub">Document / imatge WhatsApp</div>
+      </div>
+      <div class="inv-box bot">
+        <div class="inv-val">${fmt(fd)}</div>
+        <div class="inv-lbl">ð¤ Landing (bot)</div>
+        <div class="inv-sub">ExtracciÃ³ i confirmaciÃ³ bot</div>
+      </div>
+    </div>`;
+}
+
+/* ââ RENDER CLOSURE ââââââââââââââââââââââââââââââââââ */
+function renderClosure(rows) {
+  const badge = r => {
+    if (r.tipologia.includes('Automatitzada')) return 'g';
+    if (r.tipologia.includes('Error') || r.tipologia.includes('Handoff') || r.tipologia.includes('reintents')) return 'r';
+    if (r.tipologia.includes('estalvi') || r.tipologia.includes('titular') || r.tipologia.includes('cotit')) return 'o';
+    return 'b';
+  };
+  const dotColor = cls => ({ g:'#10B981', r:'#EF4444', o:'#F59E0B', b:'#3B82F6' }[cls]||'#9CA3AF');
+  document.getElementById('tipoEl').innerHTML = rows.slice(0,12).map(r => {
+    const cls = badge(r);
+    return `<div class="tipo-row">
+      <span class="tipo-name">
+        <span class="tipo-dot" style="background:${dotColor(cls)}"></span>
+        ${r.tipologia}
+      </span>
+      <span class="tipo-count ${cls}">${fmt(r.total)}</span>
+    </div>`;
+  }).join('');
+}
+
+/* ââ RENDER INCORRECT ââââââââââââââââââââââââââââââââ */
+function renderIncorrect(row) {
+  const r = row || {};
+  document.getElementById('incEl').innerHTML = `
+    <div class="inc-hero">
+      <div class="inc-num">${fmt(r.cot_ko||0)}</div>
+      <div class="inc-label">Cotitzacions amb dades KO</div>
+      <div class="inc-sub">sobre ${fmt(r.total_cot||0)} cotitzacions Â· ${pct(r.cot_ko||0, r.total_cot||1)}</div>
+    </div>
+    <div class="inc-boxes">
+      <div class="inc-box">
+        <div class="inc-box-val">${fmt(r.ko_llum||0)}</div>
+        <div class="inc-box-lbl">â¡ Llum â No / No ho sÃ©</div>
+      </div>
+      <div class="inc-box">
+        <div class="inc-box-val">${fmt(r.ko_gas||0)}</div>
+        <div class="inc-box-lbl">ð¥ Gas â No / No ho sÃ©</div>
+      </div>
+    </div>`;
+}
+
+/* ââ RENDER CHART ââââââââââââââââââââââââââââââââââââ */
+let evChart = null;
+function renderChart(rows) {
+  if (evChart) evChart.destroy();
+  const ctx = document.getElementById('evChart').getContext('2d');
+  evChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: rows.map(r => (r.semana||'').slice(0,10)),
+      datasets: [
+        { label:'Converses',   data:rows.map(r=>r.conversaciones), backgroundColor:'rgba(123,79,251,.2)', borderColor:'#7B4FFB', borderWidth:1.5, order:2 },
+        { label:'Cotitzacions',data:rows.map(r=>r.cotitzacions),   type:'line', borderColor:'#3B82F6', backgroundColor:'rgba(59,130,246,.1)',  borderWidth:2,   tension:.35, fill:true, order:1 },
+        { label:'Contractes',  data:rows.map(r=>r.contractes),     type:'line', borderColor:'#10B981', backgroundColor:'rgba(16,185,129,.1)',  borderWidth:2.5, tension:.35, fill:true, order:0 },
+      ]
+    },
+    options: {
+      responsive:true,
+      plugins:{
+        legend:{ position:'top', labels:{ font:{size:11}, boxWidth:12, usePointStyle:true } },
+        tooltip:{ mode:'index', intersect:false }
+      },
+      scales:{
+        x:{ grid:{display:false}, ticks:{font:{size:10}} },
+        y:{ grid:{color:'#F3F4F6'}, ticks:{font:{size:10}} }
+      }
+    }
+  });
+}
+
+/* ââ LOAD FROM data.json âââââââââââââââââââââââââââââ */
+async function loadDashboard() {
+  document.getElementById('loadingEl').style.display='flex';
+  document.getElementById('dashContent').style.display='none';
+  try {
+    const res = await fetch('./data.json?t=' + Date.now());
+    if (!res.ok) throw new Error(`HTTP ${res.status} â no s'ha trobat data.json`);
+    const data = await res.json();
+
+    renderFunnel(data.funnel   || []);
+    renderClosure(data.closure || []);
+    renderIncorrect(data.incorrect || {});
+    renderChart(data.weekly    || []);
+
+    // Update toolbar
+    const d = new Date(data.generated_at);
+    document.getElementById('tsLabel').textContent =
+      'Actualitzat: ' + d.toLocaleString('ca-ES', { day:'2-digit', month:'short', year:'numeric', hour:'2-digit', minute:'2-digit' });
+    if (data.date_to) {
+      const [y,m,dd] = data.date_to.split('-');
+      const months = ['gen','feb','mar','abr','mai','jun','jul','ago','set','oct','nov','des'];
+      document.getElementById('dateTo').textContent = `${parseInt(dd)} ${months[parseInt(m)-1]} ${y}`;
+    }
+
+    document.getElementById('loadingEl').style.display='none';
+    document.getElementById('dashContent').style.display='block';
+  } catch(err) {
+    document.getElementById('loadingEl').innerHTML =
+      `<div class="err-box">â Error carregant dades: ${err.message}</div>`;
+  }
+}
+
+/* Auto-load si ja estÃ s autenticat */
+if (sessionStorage.getItem('racc_auth')==='1') loadDashboard();
+</script>
+</body>
+</html>
