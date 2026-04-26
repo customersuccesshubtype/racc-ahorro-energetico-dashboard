@@ -88,7 +88,8 @@ SELECT
   countIf(cgasx.conversation_id IS NOT NULL) as contractes_gas
 FROM flow_conversations fc
 LEFT JOIN kw_origins kw    ON fc.conversation_id=kw.conversation_id
-LEFT JOIN df dfx           ON fc.conversation_id=edx.conversation_id
+LEFT JOIN df dfx           ON fc.conversation_id=dfx.conversation_id
+LEFT JOIN ed edx           ON fc.conversation_id=edx.conversation_id
 LEFT JOIN cot cotx         ON fc.conversation_id=cotx.conversation_id
 LEFT JOIN con conx         ON fc.conversation_id=conx.conversation_id
 LEFT JOIN con_elec celx    ON fc.conversation_id=celx.conversation_id
