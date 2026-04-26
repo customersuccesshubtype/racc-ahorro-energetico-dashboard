@@ -6,7 +6,7 @@ name: Refresh dashboard data
 
 on:
   schedule:
-    - cron: '0 5 * * *'   # 5am UTC â 7am CET/CEST
+    - cron: '0 5 * * *'   # 5am UTC ~ 7am CET/CEST
   workflow_dispatch:        # allows manual trigger from the GitHub UI
 
 permissions:
