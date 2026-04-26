@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-generate_data.py â RACC Estalvi EnergÃ¨tic Dashboard
+generate_data.py — RACC Estalvi Energètic Dashboard
 Queries Tinybird and writes data.json for GitHub Pages.
 
 Run locally:
@@ -13,7 +13,7 @@ import os, json, sys
 import urllib.request, urllib.parse
 from datetime import date, timedelta, datetime, timezone
 
-# ââ CONFIG ââââââââââââââââââââââââââââââââââââââââââââââââââ
+# ── CONFIG ──────────────────────────────────────────────────
 TOKEN = os.environ.get("TINYBIRD_TOKEN", "")
 ORG   = "1f5d9252-b60f-490f-8ccd-1d76c4149273"
 BOT   = "299465da-119b-4ca7-9d2c-33a82c8ec2d6"
@@ -23,7 +23,7 @@ END   = (date.today() + timedelta(days=1)).isoformat()  # upper bound (exclusive
 if not TOKEN:
     sys.exit("ERROR: TINYBIRD_TOKEN environment variable not set.")
 
-# ââ TINYBIRD QUERY âââââââââââââââââââââââââââââââââââââââââââ
+# ── TINYBIRD QUERY ───────────────────────────────────────────
 def tb_query(sql):
     url = "https://api.tinybird.co/v0/sql?q=" + urllib.parse.quote(sql + " FORMAT JSON")
     req = urllib.request.Request(url, headers={"Authorization": f"Bearer {TOKEN}"})
@@ -34,7 +34,7 @@ def tb_query(sql):
         body = e.read().decode(errors="replace")
         sys.exit(f"Tinybird HTTP {e.code}: {body[:400]}")
 
-# ââ SQL QUERIES ââââââââââââââââââââââââââââââââââââââââââââââ
+# ── SQL QUERIES ──────────────────────────────────────────────
 
 SQL_FUNNEL = f"""
 WITH flow_conversations AS(
@@ -48,8 +48,8 @@ kw_origins AS(
   SELECT conversation_id,
     if(max(if(JSONExtractString(_event_data,'nlu_keyword_name') LIKE 'Hola%',1,0))=1,'Meta',
       if(max(if(JSONExtractString(_event_data,'nlu_keyword_name') IN(
-        'Quiero informaciÃ³n sobre el servicio de ahorro energÃ©tico',
-        'Vull informaciÃ³ sobre el servei d''estalvi energÃ¨tic'
+        'Quiero información sobre el servicio de ahorro energético',
+        'Vull informació sobre el servei d''estalvi energètic'
       ),1,0))=1,'Landing','WA')) as origen
   FROM PROD_ENT0.ds_messages
   WHERE organization_id='{ORG}' AND action='nlu_keyword'
@@ -157,9 +157,10 @@ mh AS(
     max(if(JSONExtractString(m._event_data,'flow_node_content_id')=
       'Handoff Estalvi Energetic',1,0)) hae
   FROM PROD_ENT0.ds_messages m
-  INNER JOIN hi h ON m.conversation_id=h.conversation_id AND m.created_at<h.ht
+  INNER JOIN hi h ON m.conversation_id=h.conversation_id
   WHERE m.organization_id='{ORG}' AND m.bot_id='{BOT}'
   AND(m.action='flow_node' OR m.action='bot_action')
+  AND m.created_at < h.ht
   GROUP BY m.conversation_id
 )
 SELECT multiIf(
@@ -173,8 +174,8 @@ SELECT multiIf(
   mhx.ag=1,   'Sense estalvi (gas)',
   mhx.nte=1,  'No titular (elec)',
   mhx.ntg=1,  'No titular (gas)',
-  mhx.ge=1,   'Error genÃ¨ric',
-  mhx.hae=1,  'Handoff Estalvi EnergÃ¨tic',
+  mhx.ge=1,   'Error gen\u00e8ric',
+  mhx.hae=1,  'Handoff Estalvi Energ\u00e8tic',
   'Handoff \u2013 Sense motiu'
 ) tipologia, count() total
 FROM fc
@@ -227,23 +228,23 @@ LEFT JOIN cl clx   ON fc.conversation_id=clx.conversation_id
 LEFT JOIN cg cgx   ON fc.conversation_id=cgx.conversation_id
 """
 
-# ââ MAIN âââââââââââââââââââââââââââââââââââââââââââââââââââââ
+# ── MAIN ─────────────────────────────────────────────────────
 if __name__ == "__main__":
-    print(f"Querying Tinybird: {START} â {date.today().isoformat()}")
+    print(f"Querying Tinybird: {START} \u2192 {date.today().isoformat()}")
 
-    print("  Â· funnelâ¦")
+    print("  \u00b7 funnel\u2026")
     funnel = tb_query(SQL_FUNNEL)
     print(f"    {len(funnel)} rows")
 
-    print("  Â· weeklyâ¦")
+    print("  \u00b7 weekly\u2026")
     weekly = tb_query(SQL_WEEKLY)
     print(f"    {len(weekly)} rows")
 
-    print("  Â· closureâ¦")
+    print("  \u00b7 closure\u2026")
     closure = tb_query(SQL_CLOSURE)
     print(f"    {len(closure)} rows")
 
-    print("  Â· incorrectâ¦")
+    print("  \u00b7 incorrect\u2026")
     incorrect_rows = tb_query(SQL_INCORRECT)
     incorrect = incorrect_rows[0] if incorrect_rows else {}
     print("    done")
