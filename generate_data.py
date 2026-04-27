@@ -324,7 +324,7 @@ mh AS(
   GROUP BY m.conversation_id
 )
 SELECT
-  fc.conversation_id,
+  fc.conversation_id AS conversation_id,
   formatDateTime(fc.fecha, '%Y-%m-%d') as fecha,
   if(kw.origen='','WA',kw.origen) as origen,
   if(dfx.conversation_id IS NOT NULL OR edx.conversation_id IS NOT NULL, 1, 0) as factura,
