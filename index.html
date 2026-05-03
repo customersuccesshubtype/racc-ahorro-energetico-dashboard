@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>RACC â Estalvi EnergÃ¨tic</title>
+<title>RACC &#8211; Estalvi Energ&#232;tic</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <style>
 :root{
@@ -79,8 +79,8 @@ header .meta{margin-left:auto;font-size:12px;opacity:.75;text-align:right}
 table{width:100%;border-collapse:collapse;font-size:13px}
 th{background:var(--bg);color:var(--gray);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.5px;padding:10px 12px;text-align:left;border-bottom:2px solid var(--border);cursor:pointer;user-select:none;white-space:nowrap}
 th:hover{color:var(--brand)}
-th.sorted-asc::after{content:' â²'}
-th.sorted-desc::after{content:' â¼'}
+th.sorted-asc::after{content:' &#9650;'}
+th.sorted-desc::after{content:' &#9660;'}
 td{padding:10px 12px;border-bottom:1px solid var(--border);color:var(--subtext)}
 tr:last-child td{border-bottom:none}
 tr:hover td{background:var(--brand-light)}
@@ -125,8 +125,8 @@ tr:hover td{background:var(--brand-light)}
 <div id="login-overlay">
   <div class="login-box">
     <div class="logo">RACC</div>
-    <p>Estalvi EnergÃ¨tic Â· Dashboard</p>
-    <input type="password" id="pw-input" placeholder="ContraseÃ±a" autofocus>
+    <p>Estalvi Energ&#232;tic &#183; Dashboard</p>
+    <input type="password" id="pw-input" placeholder="Contrase&#241;a" autofocus>
     <button onclick="doLogin()">Entrar</button>
     <div class="err" id="pw-err"></div>
   </div>
@@ -137,24 +137,24 @@ tr:hover td{background:var(--brand-light)}
   <header>
     <div>
       <div class="logo">RACC</div>
-      <div class="subtitle">Estalvi EnergÃ¨tic Â· Dashboard</div>
+      <div class="subtitle">Estalvi Energ&#232;tic &#183; Dashboard</div>
     </div>
     <div class="meta">
-      Actualizado: <span id="gen-at">â</span>
+      Actualizado: <span id="gen-at">&#8211;</span>
     </div>
   </header>
 
   <!-- MAIN NAV TABS -->
   <div class="nav-tabs">
-    <div class="nav-tab active" id="tab-dashboard" onclick="switchView('dashboard')">ð Dashboard</div>
-    <div class="nav-tab" id="tab-rawdata" onclick="switchView('rawdata')">ð Datos brutos</div>
+    <div class="nav-tab active" id="tab-dashboard" onclick="switchView('dashboard')">&#128202; Dashboard</div>
+    <div class="nav-tab" id="tab-rawdata" onclick="switchView('rawdata')">&#128203; Datos brutos</div>
   </div>
 
   <!-- PERIOD BAR -->
   <div class="period-bar">
     <button class="btn-periodo active" id="btn-all"   onclick="setPeriod('all',   this)">Total</button>
     <button class="btn-periodo"        id="btn-month" onclick="setPeriod('month', this)">Este mes</button>
-    <button class="btn-periodo"        id="btn-week"  onclick="setPeriod('week',  this)">Ãltima semana</button>
+    <button class="btn-periodo"        id="btn-week"  onclick="setPeriod('week',  this)">&#218;ltima semana</button>
     <button class="btn-periodo"        id="btn-custom" onclick="setPeriod('custom', this)">Periodo personalizado</button>
     <div class="date-range-bar" id="date-range-bar">
       <label>Desde</label>
@@ -174,7 +174,7 @@ tr:hover td{background:var(--brand-light)}
 
     <!-- FUNNEL STEPS -->
     <div class="card full-col" style="margin-bottom:24px">
-      <div class="section-title">Embudo de conversiÃ³n</div>
+      <div class="section-title">Embudo de conversi&#243;n</div>
       <div class="funnel-steps" id="funnel-steps"></div>
     </div>
 
@@ -192,13 +192,13 @@ tr:hover td{background:var(--brand-light)}
 
     <!-- CHART -->
     <div class="card full-col" style="margin-bottom:24px" id="chart-card">
-      <div class="section-title">EvoluciÃ³n semanal</div>
+      <div class="section-title">Evoluci&#243;n semanal</div>
       <div class="chart-wrap"><canvas id="weekly-chart"></canvas></div>
     </div>
 
     <!-- INCORRECT -->
     <div class="card full-col">
-      <div class="section-title">ConfirmaciÃ³n datos factura</div>
+      <div class="section-title">Confirmaci&#243;n datos factura</div>
       <div id="incorrect-section"></div>
     </div>
   </div>
@@ -206,14 +206,14 @@ tr:hover td{background:var(--brand-light)}
   <!-- RAW DATA VIEW -->
   <div id="rawdata-view">
     <div class="card full-col">
-      <div class="section-title" style="margin-bottom:16px">Conversaciones Â· Datos brutos</div>
+      <div class="section-title" style="margin-bottom:16px">Conversaciones &#183; Datos brutos</div>
       <div class="raw-tools">
-        <input type="text" id="raw-search" placeholder="Buscar por ID, origen, tipologÃ­aâ¦" oninput="filterRaw()">
+        <input type="text" id="raw-search" placeholder="Buscar por ID, origen, tipolog&#237;a&#8230;" oninput="filterRaw()">
         <span class="raw-count" id="raw-count"></span>
-        <button class="btn-csv" onclick="exportCSV()">â¬ Exportar CSV</button>
+        <button class="btn-csv" onclick="exportCSV()">&#11015; Exportar CSV</button>
       </div>
       <div class="tbl-wrap" id="raw-table-wrap">
-        <div class="empty">Cargando datosâ¦</div>
+        <div class="empty">Cargando datos&#8230;</div>
       </div>
     </div>
   </div>
@@ -229,7 +229,7 @@ function doLogin() {
     document.getElementById('app').style.display = 'block';
     loadDashboard();
   } else {
-    document.getElementById('pw-err').textContent = 'ContraseÃ±a incorrecta';
+    document.getElementById('pw-err').textContent = 'Contrase&#241;a incorrecta';
   }
 }
 
@@ -295,13 +295,11 @@ function renderAllCustom(from, to) {
   renderFunnelTable(d);
   renderClosure(d);
   renderIncorrect(d);
-  document.getElementById('period-info').textContent = `PerÃ­odo: ${from} â ${to} (${rows.length} conversaciones)`;
-  // Update weekly chart to show weeks in range
+  document.getElementById('period-info').textContent = `Per&#237;odo: ${from} &#8594; ${to} (${rows.length} conversaciones)`;
   const weekly = computeWeeklyFromRaw(rows);
   renderChart(weekly);
 }
 
-// ---- COMPUTE FROM RAW ----
 function computeFromRaw(rows, from, to) {
   const byOrigen = {};
   for (const r of rows) {
@@ -318,18 +316,13 @@ function computeFromRaw(rows, from, to) {
     if (Number(r.contrato_gas))  g.contractes_gas++;
   }
   const funnel = Object.values(byOrigen).sort((a,b)=>b.conversaciones-a.conversaciones);
-
-  // closure counts
   const closureMap = {};
   for (const r of rows) {
     const t = r.tipologia || 'Sin datos';
     closureMap[t] = (closureMap[t]||0) + 1;
   }
   const closure = Object.entries(closureMap).map(([tipologia,total])=>({tipologia,total})).sort((a,b)=>b.total-a.total);
-
-  // incorrect: we can't compute ko_llum/ko_gas from raw (no individual answers), show N/A
   const incorrect = {total_cot: funnel.reduce((s,r)=>s+Number(r.cotitzacions),0), cot_ko:null, ko_llum:null, ko_gas:null};
-
   return {date_from:from, date_to:to, funnel, closure, incorrect};
 }
 
@@ -338,8 +331,7 @@ function computeWeeklyFromRaw(rows) {
   for (const r of rows) {
     if (!r.fecha) continue;
     const d   = new Date(r.fecha);
-    const day = d.getDay(); // 0=sun
-    const diff = (day === 0) ? 0 : (day === 1 ? 0 : -(day-1));  // Monday start
+    const day = d.getDay();
     const mon = new Date(d);
     mon.setDate(d.getDate() - (day===0?6:day-1));
     const key = mon.toISOString().substring(0,10);
@@ -351,146 +343,72 @@ function computeWeeklyFromRaw(rows) {
   return Object.values(wk).sort((a,b)=>a.semana.localeCompare(b.semana));
 }
 
-// ---- KPIs ----
 function renderKPIs(d) {
   const funnel = d.funnel || [];
-  const tot   = funnel.reduce((s,r)=>s+Number(r.conversaciones),0);
-  const fac   = funnel.reduce((s,r)=>s+Number(r.factura_total||0),0);
-  const cot   = funnel.reduce((s,r)=>s+Number(r.cotitzacions||0),0);
-  const con   = funnel.reduce((s,r)=>s+Number(r.contractes||0),0);
-  const luz   = funnel.reduce((s,r)=>s+Number(r.contractes_llum||0),0);
-  const gas   = funnel.reduce((s,r)=>s+Number(r.contractes_gas||0),0);
-
+  const tot = funnel.reduce((s,r)=>s+Number(r.conversaciones),0);
+  const fac = funnel.reduce((s,r)=>s+Number(r.factura_total||0),0);
+  const cot = funnel.reduce((s,r)=>s+Number(r.cotitzacions||0),0);
+  const con = funnel.reduce((s,r)=>s+Number(r.contractes||0),0);
+  const luz = funnel.reduce((s,r)=>s+Number(r.contractes_llum||0),0);
+  const gas = funnel.reduce((s,r)=>s+Number(r.contractes_gas||0),0);
   const kpis = [
-    {label:'Conversaciones', value:tot,  sub:'total iniciadas'},
-    {label:'Facturas',       value:fac,  sub:`${tot?Math.round(fac/tot*100):0}% de conversaciones`},
-    {label:'Cotizaciones',   value:cot,  sub:`${tot?Math.round(cot/tot*100):0}% de conversaciones`},
-    {label:'Contratos',      value:con,  sub:`${tot?Math.round(con/tot*100):0}% de conversaciones`, highlight:true},
-    {label:'Contratos Luz',  value:luz,  sub:`${tot?Math.round(luz/tot*100):0}% de conversaciones`},
-    {label:'Contratos Gas',  value:gas,  sub:`${tot?Math.round(gas/tot*100):0}% de conversaciones`},
+    {label:'Conversaciones', value:tot, sub:'votal iniciadas'},
+    {label:'Facturas', value:fac, sub:`${tot?Math.round(fac/tot*100):0}% de conversaciones`},
+    {label:'Cotizaciones', value:cot, sub:`${tot?Math.round(cot/tot*100):0}% de conversaciones`},
+    {label:'Contratos', value:con, sub:`${tot?Math.round(con/tot*100):0}% de conversaciones`, highlight:true},
+    {label:'Contratos Luz', value:luz, sub:`${tot?Math.round(luz/tot*100):0}% de conversaciones`},
+    {label:'Contratos Gas', value:gas, sub:`${tot?Math.round(gas/tot*100):0}% de conversaciones`},
   ];
-  document.getElementById('kpi-grid').innerHTML = kpis.map(k=>`
-    <div class="kpi-card${k.highlight?' highlight':''}">
-      <div class="kpi-label">${k.label}</div>
-      <div class="kpi-value">${k.value.toLocaleString('es-ES')}</div>
-      <div class="kpi-sub">${k.sub}</div>
-    </div>`).join('');
+  document.getElementById('kpi-grid').innerHTML = kpis.map(k=>`<div class="kpi-card${k.highlight?' highlight':''}"><div class="kpi-label">${k.label}</div><div class="kpi-value">${k.value.toLocaleString('es-ES')}</div><div class="kpi-sub">${k.sub}</div></div>`).join('');
 }
 
-// ---- FUNNEL STEPS ----
 function renderFunnelSteps(d) {
   const funnel = d.funnel || [];
   const tot = funnel.reduce((s,r)=>s+Number(r.conversaciones),0);
   const fac = funnel.reduce((s,r)=>s+Number(r.factura_total||0),0);
   const cot = funnel.reduce((s,r)=>s+Number(r.cotitzacions||0),0);
   const con = funnel.reduce((s,r)=>s+Number(r.contractes||0),0);
-
-  const steps = [
-    {label:'Conversaciones', value:tot,  base:tot},
-    {label:'Facturas',       value:fac,  base:tot},
-    {label:'Cotizaciones',   value:cot,  base:tot},
-    {label:'Contratos',      value:con,  base:tot},
-  ];
-  document.getElementById('funnel-steps').innerHTML = steps.map((s,i)=>`
-    ${i>0?'<div class="funnel-arrow">âº</div>':''}
-    <div class="funnel-step">
-      <div class="step-label">${s.label}</div>
-      <div class="step-value">${s.value.toLocaleString('es-ES')}</div>
-      <div class="step-pct">${s.base?Math.round(s.value/s.base*100):0}%</div>
-    </div>`).join('');
+  const steps = [{label:'Conversaciones', value:tot, base:tot},{label:'Facturas', value:fac, base:tot},{label:'Cotizaciones', value:cot, base:tot},{label:'Contratos', value:con, base:tot}];
+  document.getElementById('funnel-steps').innerHTML = steps.map((s,i)=>`${i>0?'<div class="funnel-arrow">&#8250;</div>':''}<div class="funnel-step"><div class="step-label">${s.label}</div><div class="step-value">${s.value.toLocaleString('es-ES')}</div><div class="step-pct">${s.base?Math.round(s.value/s.base*100):0}%</div></div>`).join('');
 }
 
-// ---- ORIGIN TABLE ----
 function renderFunnelTable(d) {
   const funnel = d.funnel || [];
   if (!funnel.length) { document.getElementById('funnel-table').innerHTML = '<div class="empty">Sin datos</div>'; return; }
   const tot = funnel.reduce((s,r)=>s+Number(r.conversaciones),0);
-  const cols = [
-    {k:'origen',         label:'Origen'},
-    {k:'conversaciones', label:'Conv.'},
-    {k:'factura_total',  label:'Facturas'},
-    {k:'cotitzacions',   label:'Cotiz.'},
-    {k:'contractes',     label:'Contratos'},
-    {k:'contractes_llum',label:'Luz'},
-    {k:'contractes_gas', label:'Gas'},
-  ];
-  document.getElementById('funnel-table').innerHTML = `<table>
-    <thead><tr>${cols.map(c=>`<th>${c.label}</th>`).join('')}<th>Conv. %</th></tr></thead>
-    <tbody>${funnel.map(r=>{
-      const pct = tot ? Math.round(Number(r.conversaciones)/tot*100) : 0;
-      return `<tr>
-        <td><strong>${r.origen}</strong></td>
-        ${cols.slice(1).map(c=>`<td>${Number(r[c.k]||0).toLocaleString('es-ES')}</td>`).join('')}
-        <td><div class="funnel-bar-wrap"><div class="funnel-bar" style="width:${pct}%"></div></div><span class="pct-label">${pct}%</span></td>
-      </tr>`;
-    }).join('')}</tbody></table>`;
+  const cols = [{:'origen',label:'Origen'},{:'conversaciones',label:'Conv.'},{:'factura_total',label:'Facturas'},{:'cotitzacions',label:'Cotiz.'},{:'contractes',label:'Contratos'},{:'pcontractes_llum',label:'Luz'},{:'contractes_gas',label:'Gas'}];
+  document.getElementById('funnel-table').innerHTML = `<table><thead><tr>${cols.map(c=>`<th>${c.label}</th>`).join('')}<th>Conv. %</th></tr></thead><tbody>${funnel.map(r=>{const pct=tot?Math.round(Number(r.conversaciones)/tot*100):0;return `<tr><td><strong>${r.origen}</strong></td>${cols.slice(1).map(c=>`<td>${Number(r[c.k]||0).toLocaleString('es-ES')}</td>`).join('')}<td><div class="funnel-bar-wrap"><div class="funnel-bar" style="width:${pct}%"></div></div><span class="pct-label">${pct}%</span></td></tr>`;}).join('')}</tbody></table>`;
 }
 
-// ---- CLOSURE ----
 function renderClosure(d) {
   const raw = (d.closure || []).filter(r => r.tipologia !== 'Automatitzada' && r.tipologia !== 'Automatizada');
   if (!raw.length) { document.getElementById('closure-table').innerHTML = '<div class="empty">Sin datos</div>'; return; }
   const tot = raw.reduce((s,r)=>s+Number(r.total),0);
-  document.getElementById('closure-table').innerHTML = `<table>
-    <thead><tr><th>TipologÃ­a</th><th>Total</th><th>%</th></tr></thead>
-    <tbody>${raw.map(r=>`<tr>
-      <td>${r.tipologia}</td>
-      <td>${Number(r.total).toLocaleString('es-ES')}</td>
-      <td>${tot?Math.round(Number(r.total)/tot*100):0}%</td>
-    </tr>`).join('')}</tbody></table>`;
+  document.getElementById('closure-table').innerHTML = `<table><thead><tr><th>Tipolog&#237;a</th><th>Total</th><th>%</th></tr></thead><tbody>${raw.map(r=>`<tr><td>${r.tipologia}</td><td>${Number(r.total).toLocaleString('es-ES')}</td><td>${tot?Math.round(Number(r.total)/tot*100):0}%</td></tr>`).join('')}</tbody></table>`;
 }
 
-// ---- INCORRECT ----
 function renderIncorrect(d) {
   const inc = d.incorrect || {};
   if (!inc.total_cot) { document.getElementById('incorrect-section').innerHTML = '<div class="empty">Sin datos</div>'; return; }
-  const ko  = inc.cot_ko  ?? 'â';
-  const kl  = inc.ko_llum ?? 'â';
-  const kg  = inc.ko_gas  ?? 'â';
+  const ko = inc.cot_ko ?? '&#8211;';
+  const kl = inc.ko_llum ?? '&#8211;';
+  const kg = inc.ko_gas ?? '&#8211;';
   const pct = (inc.total_cot && inc.cot_ko != null) ? Math.round(inc.cot_ko / inc.total_cot * 100) : null;
-  document.getElementById('incorrect-section').innerHTML = `
-    <table><thead><tr><th>Total cotizaciones</th><th>KO total</th><th>KO %</th><th>KO Luz</th><th>KO Gas</th></tr></thead>
-    <tbody><tr>
-      <td>${Number(inc.total_cot).toLocaleString('es-ES')}</td>
-      <td>${typeof ko==='number'?Number(ko).toLocaleString('es-ES'):ko}</td>
-      <td>${pct != null ? pct+'%' : 'â'}</td>
-      <td>${typeof kl==='number'?Number(kl).toLocaleString('es-ES'):kl}</td>
-      <td>${typeof kg==='number'?Number(kg).toLocaleString('es-ES'):kg}</td>
-    </tr></tbody></table>`;
+  document.getElementById('incorrect-section').innerHTML = `<table><thead><tr><th>Total cotizaciones</th><th>KO total</th><th>KO %</th><th>KO Luz</th><th>KO Gas</th></tr></thead><tbody><tr><td>${Number(inc.total_cot).toLocaleString('es-ES')}</td><td>${typeof ko==='number'?Number(ko).toLocaleString('es-ES'):ko}</td><td>${pct!=null?pct+'%':'&#8211;'}</td><td>${typeof kl==='number'?Number(kl).toLocaleString('es-ES'):kl}</td><td>${typeof kg==='number'?Number(kg).toLocaleString('es-ES'):kg}</td></tr></tbody></table>`;
 }
 
-// ---- PERIOD DATE ----
 function renderPeriodDate(d) {
   const from = d.date_from || '';
-  const to   = (d.date_to   || '').substring(0,10);
-  if (from || to) {
-    document.getElementById('period-info').textContent = `PerÃ­odo: ${from} â ${to}`;
-  }
+  const to = (d.date_to || '').substring(0,10);
+  if (from || to) document.getElementById('period-info').textContent = `Per&#237;odo: ${from} &#8594; ${to}`;
 }
 
-// ---- WEEKLY CHART ----
 function renderChart(weekly) {
   const ctx = document.getElementById('weekly-chart').getContext('2d');
   if (_chart) _chart.destroy();
-  _chart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: weekly.map(w=>w.semana),
-      datasets: [
-        {label:'Conversaciones', data:weekly.map(w=>w.conversaciones), backgroundColor:'rgba(123,47,190,.15)', borderColor:'#7B2FBE', borderWidth:2},
-        {label:'Cotizaciones',   data:weekly.map(w=>w.cotitzacions),   backgroundColor:'rgba(245,158,11,.15)', borderColor:'#F59E0B', borderWidth:2},
-        {label:'Contratos',      data:weekly.map(w=>w.contractes),     backgroundColor:'rgba(16,185,129,.15)', borderColor:'#10B981', borderWidth:2},
-      ]
-    },
-    options:{
-      responsive:true, maintainAspectRatio:false,
-      plugins:{legend:{position:'top'}},
-      scales:{y:{beginAtZero:true, ticks:{precision:0}}}
-    }
-  });
+  _chart = new Chart(ctx, {type:'bar',data:{eabels:weekly.map(w=>w.semana),datasets:[{label:'Conversaciones',data:weekly.map(w=>w.conversaciones),backgroundColor:'rgba(123,47,190,.15)',borderColor:'#7B2FBE',borderWidth:2},{label:'Cotizaciones',data:weekly.map(w=>w.cotitzacions),backgroundColor:'rgba(245,158,11,.15)',borderColor:'#F59E0B',borderWidth:2},{label:'Contratos',data:weekly.map(w=>w.contractes),backgroundColor:'rgba(16,185,129,.15)',borderColor:'#10B981',borderWidth:2}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'top'}},scales:zy:{beginAtZero:true,ticks:{precision:0}}}}});
 }
 
-// ---- RAW DATA TABLE ----
 function renderRawTable(rows) {
   _rawFiltered = applyRawFilter(rows);
   updateRawCount();
@@ -500,113 +418,49 @@ function renderRawTable(rows) {
 function applyRawFilter(rows) {
   const q = document.getElementById('raw-search').value.toLowerCase().trim();
   if (!q) return [...rows];
-  return rows.filter(r =>
-    (r.conversation_id||'').toLowerCase().includes(q) ||
-    (r.origen||'').toLowerCase().includes(q) ||
-    (r.tipologia||'').toLowerCase().includes(q) ||
-    (r.fecha||'').includes(q)
-  );
+  return rows.filter(r => (r.conversation_id||'').toLowerCase().includes(q)||(r.origen||'').toLowerCase().includes(q)||(r.tipologia||'').toLowerCase().includes(q)||(r.fecha||'').includes(q));
 }
 
-function filterRaw() {
-  _rawFiltered = applyRawFilter(_rawRows);
-  updateRawCount();
-  drawRawTable();
-}
+function filterRaw() { _rawFiltered = applyRawFilter(_rawRows); updateRawCount(); drawRawTable(); }
 
 function updateRawCount() {
-  document.getElementById('raw-count').textContent =
-    `${_rawFiltered.length.toLocaleString('es-ES')} de ${_rawRows.length.toLocaleString('es-ES')} conversaciones`;
+  document.getElementById('raw-count').textContent = `${_rawFiltered.length.toLocaleString('es-ES')} de ${_rawRows.length.toLocaleString('es-ES')} conversaciones`;
 }
 
 function sortRaw(col) {
-  if (_rawSort.col === col) {
-    _rawSort.dir = _rawSort.dir==='asc' ? 'desc' : 'asc';
-  } else {
-    _rawSort = {col, dir:'asc'};
-  }
-  _rawFiltered.sort((a,b)=>{
-    const va = a[col]??'', vb = b[col]??'';
-    const cmp = String(va).localeCompare(String(vb), 'es', {numeric:true});
-    return _rawSort.dir==='asc' ? cmp : -cmp;
-  });
+  if (_rawSort.col === col) _rawSort.dir = _rawSort.dir==='asc'?'desc':'asc';
+  else _rawSort = {col,dir:'asc'};
+  _rawFiltered.sort((a,b)=>{const va=a[col]??'',vb=b[col]??'';const cmp=String(va).localeCompare(String(vb),'es',{numeric:true});return _rawSort.dir==='asc'?cmp:-cmp;});
   drawRawTable();
 }
 
 function drawRawTable() {
-  const cols = [
-    {k:'fecha',           label:'Fecha'},
-    {k:'origen',          label:'Origen'},
-    {k:'factura',         label:'Factura'},
-    {k:'factura_chat',    label:'Fac. chat'},
-    {k:'factura_dades',   label:'Fac. datos'},
-    {k:'cotizacion',      label:'Cotiz.'},
-    {k:'contrato',        label:'Contrato'},
-    {k:'contrato_luz',    label:'C. Luz'},
-    {k:'contrato_gas',    label:'C. Gas'},
-    {k:'tipologia',       label:'TipologÃ­a'},
-    {k:'conversation_id', label:'ID ConversaciÃ³n'},
-  ];
-  const header = cols.map(c=>{
-    const cls = _rawSort.col===c.k ? (_rawSort.dir==='asc'?'sorted-asc':'sorted-desc') : '';
-    return `<th class="${cls}" onclick="sortRaw('${c.k}')">${c.label}</th>`;
-  }).join('');
-
-  const yesno = v => Number(v)===1
-    ? '<span class="badge badge-yes">SÃ­</span>'
-    : (Number(v)===0 ? '<span class="badge badge-no">No</span>' : v);
-
-  const rows = _rawFiltered.slice(0, 2000).map(r=>`<tr>
-    <td>${r.fecha||''}</td>
-    <td>${r.origen||''}</td>
-    <td>${yesno(r.factura)}</td>
-    <td>${yesno(r.factura_chat)}</td>
-    <td>${yesno(r.factura_dades)}</td>
-    <td>${yesno(r.cotizacion)}</td>
-    <td>${yesno(r.contrato)}</td>
-    <td>${yesno(r.contrato_luz)}</td>
-    <td>${yesno(r.contrato_gas)}</td>
-    <td>${r.tipologia||''}</td>
-    <td style="font-size:11px;color:#aaa">${r.conversation_id||''}</td>
-  </tr>`).join('');
-
-  const note = _rawFiltered.length > 2000
-    ? `<tr><td colspan="${cols.length}" style="text-align:center;color:#aaa;padding:12px">Mostrando los primeros 2.000 resultados de ${_rawFiltered.length.toLocaleString('es-ES')}. Usa el buscador para filtrar.</td></tr>`
-    : '';
-
-  document.getElementById('raw-table-wrap').innerHTML =
-    `<table><thead><tr>${header}</tr></thead><tbody>${rows}${note}</tbody></table>`;
+  const cols = [{:'fecha',label:'Fecha'},{:'origen',label:'Origen'},{:'factura',label:'Factura'},{:'factura_chat',label:'Fac. chat'},{:'factura_dades',label:'Fac. datos'},{:'pcotizacion',label:'Cotiz.'},{:'contrato',label:'Contrato'},{:'pcontrato_luz',label:'C. Luz'},{:'contrato_gas',label:'C. Gas'},{:'tipologia',label:'Tipolog&#237;a'},{:'pconversation_id',label:'ID Conversaci&#243;n'}];
+  const header = cols.map(c=>{const cls=_rawSort.col===c.k?(_rawSort.dir==='asc'?'sorted-asc':'sorted-desc'):'';return `<th class="${cls}" onclick="sortRaw('${c.k}')">${c.label}</th>`;}).join('');
+  const yesno = v => Number(v)===1 ? '<span class="badge badge-yes">S&#237;</span>' : (Number(v)===0 ? '<span class="badge badge-no">No</span>' : v);
+  const rows = _rawFiltered.slice(0,2000).map(r=>`<tr><td>${r.fecha||''}</td><td>${r.origen||''}</td><td>${yesno(r.factura)}</td><td>${yesno(r.factura_chat)}</td><td>${yesno(r.factura_dades)}</td><td>${yesno(r.cotizacion)}</td><td>${yesno(r.contrato)}</td><td>${yesno(r.contrato_luz)}</td><td>${yesno(r.contrato_gas)}</td><td>${r.tipologia||''}</td><td style="font-size:11px;color:#aaa">${r.conversation_id||''}</td></tr>`).join('');
+  const note=_rawFiltered.length>2000?`<tr><td colspan="${cols.length}" style="text-align:center;color:#aaa;padding:12px">Mostrando los primeros 2.000 resultados de ${_rawFiltered.length.toLocaleString('es-ES')}. Usa el buscador para filtrar.</td></tr>`:'';
+  document.getElementById('raw-table-wrap').innerHTML = `<table><thead><tr>${header}</tr></thead><tbody>${rows}${note}</tbody></table>`;
 }
 
-// ---- CSV EXPORT ----
 function exportCSV() {
-  const cols = ['fecha','origen','factura','factura_chat','factura_dades','cotizacion','contrato','contrato_luz','contrato_gas','tipologia','conversation_id'];
-  const header = cols.join(',');
-  const escape = v => {
-    const s = String(v??'');
-    return s.includes(',') || s.includes('"') || s.includes('\n') ? '"'+s.replace(/"/g,'""')+'"' : s;
-  };
-  const body = _rawFiltered.map(r=>cols.map(c=>escape(r[c])).join(',')).join('\n');
-  const blob = new Blob(['\uFEFF'+header+'\n'+body], {type:'text/csv;charset=utf-8'});
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  const today = new Date().toISOString().substring(0,10);
-  a.download = `racc_conversaciones_${today}.csv`;
+  const cols=['fecha','origen','factura','factura_chat','factura_dades','cotizacion','contrato','contrato_luz','contrato_gas','tipologia','conversation_id'];
+  const header=cols.join(',');
+  const escape=v=>{const s=String(v??'');return s.includes(',')||s.includes('"')||s.includes('\n')?'"'+s.replace(/"/g,'""')+'"':s;};
+  const body=_rawFiltered.map(r=>cols.map(c=>escape(r[c])).join(',')).join('\n');
+  const blob=new Blob(['\uFEFF'+header+'\n'+body],{type:'text/csv;charset=utf-8'});
+  const a=document.createElement('a');
+  a.href=URL/createObjectURL(blob);
+  const today=new Date().toISOString().substring(0,10);
+  a.download=`racc_conversaciones_${today}.csv`;
   a.click();
 }
 
-// ---- LOAD ----
 async function loadDashboard() {
   const url = './data.json?t=' + Date.now();
-  try {
-    _data = await fetch(url).then(r => r.json());
-  } catch(e) {
-    alert('Error cargando datos: ' + e.message);
-    return;
-  }
-  if (_data.generated_at) {
-    document.getElementById('gen-at').textContent = _data.generated_at.replace('T',' ').replace('Z',' UTC');
-  }
+  try { _data = await fetch(url).then(r => r.json()); }
+  catch(e) { alert('Error cargando datos: ' + e.message); return; }
+  if (_data.generated_at) document.getElementById('gen-at').textContent = _data.generated_at.replace('T',' ').replace('Z',' UTC');
   _rawRows = _data.raw || [];
   renderAll();
   renderChart(_data.weekly || []);
