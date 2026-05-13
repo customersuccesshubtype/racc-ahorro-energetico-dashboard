@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-05-12T07:48:08Z",
+  "generated_at": "2026-05-13T07:54:59Z",
   "all": {
     "date_from": "2026-01-31",
-    "date_to": "2026-05-13",
+    "date_to": "2026-05-14",
     "funnel": [
       {
         "origen": "Landing",
-        "conversaciones": 1387,
-        "factura_total": 936,
-        "factura_chat": 759,
-        "factura_dades": 605,
+        "conversaciones": 1391,
+        "factura_total": 940,
+        "factura_chat": 763,
+        "factura_dades": 608,
         "cotitzacions": 398,
         "contractes": 67,
         "contractes_llum": 56,
@@ -17,10 +17,10 @@
       },
       {
         "origen": "WA",
-        "conversaciones": 887,
-        "factura_total": 675,
-        "factura_chat": 556,
-        "factura_dades": 428,
+        "conversaciones": 888,
+        "factura_total": 676,
+        "factura_chat": 557,
+        "factura_dades": 429,
         "cotitzacions": 275,
         "contractes": 56,
         "contractes_llum": 46,
@@ -45,11 +45,11 @@
       },
       {
         "tipologia": "No cotitzable",
-        "total": 339
+        "total": 340
       },
       {
         "tipologia": "Handoff - Sense motiu",
-        "total": 237
+        "total": 238
       },
       {
         "tipologia": "Error arxiu factura",
@@ -57,7 +57,7 @@
       },
       {
         "tipologia": "Ahorro negatiu",
-        "total": 158
+        "total": 159
       },
       {
         "tipologia": "Massa reintents",
@@ -68,16 +68,16 @@
         "total": 139
       },
       {
+        "tipologia": "Error generic",
+        "total": 57
+      },
+      {
         "tipologia": "No titular (elec)",
         "total": 57
       },
       {
-        "tipologia": "Error generic",
-        "total": 56
-      },
-      {
         "tipologia": "Sense estalvi (gas)",
-        "total": 43
+        "total": 44
       },
       {
         "tipologia": "Handoff Estalvi Energetic",
@@ -101,14 +101,14 @@
   },
   "month": {
     "date_from": "2026-05-01",
-    "date_to": "2026-05-13",
+    "date_to": "2026-05-14",
     "funnel": [
       {
         "origen": "Landing",
-        "conversaciones": 77,
-        "factura_total": 42,
-        "factura_chat": 31,
-        "factura_dades": 29,
+        "conversaciones": 81,
+        "factura_total": 46,
+        "factura_chat": 35,
+        "factura_dades": 32,
         "cotitzacions": 23,
         "contractes": 7,
         "contractes_llum": 7,
@@ -116,10 +116,10 @@
       },
       {
         "origen": "WA",
-        "conversaciones": 18,
-        "factura_total": 10,
-        "factura_chat": 10,
-        "factura_dades": 6,
+        "conversaciones": 19,
+        "factura_total": 11,
+        "factura_chat": 11,
+        "factura_dades": 7,
         "cotitzacions": 3,
         "contractes": 0,
         "contractes_llum": 0,
@@ -133,7 +133,7 @@
       },
       {
         "tipologia": "Handoff - Sense motiu",
-        "total": 13
+        "total": 14
       },
       {
         "tipologia": "Massa reintents",
@@ -141,15 +141,15 @@
       },
       {
         "tipologia": "No cotitzable",
-        "total": 6
+        "total": 7
       },
       {
         "tipologia": "Ahorro negatiu",
-        "total": 5
+        "total": 6
       },
       {
         "tipologia": "Error generic",
-        "total": 3
+        "total": 4
       },
       {
         "tipologia": "Sense estalvi (llum)",
@@ -158,6 +158,10 @@
       {
         "tipologia": "Error arxiu factura",
         "total": 3
+      },
+      {
+        "tipologia": "Sense estalvi (gas)",
+        "total": 1
       },
       {
         "tipologia": "No titular (elec)",
@@ -176,26 +180,26 @@
     }
   },
   "week": {
-    "date_from": "2026-05-06",
-    "date_to": "2026-05-13",
+    "date_from": "2026-05-07",
+    "date_to": "2026-05-14",
     "funnel": [
       {
         "origen": "Landing",
-        "conversaciones": 35,
-        "factura_total": 19,
-        "factura_chat": 16,
-        "factura_dades": 13,
-        "cotitzacions": 9,
+        "conversaciones": 32,
+        "factura_total": 21,
+        "factura_chat": 18,
+        "factura_dades": 14,
+        "cotitzacions": 7,
         "contractes": 1,
         "contractes_llum": 1,
         "contractes_gas": 0
       },
       {
         "origen": "WA",
-        "conversaciones": 9,
-        "factura_total": 6,
-        "factura_chat": 6,
-        "factura_dades": 4,
+        "conversaciones": 10,
+        "factura_total": 7,
+        "factura_chat": 7,
+        "factura_dades": 5,
         "cotitzacions": 1,
         "contractes": 0,
         "contractes_llum": 0,
@@ -205,35 +209,39 @@
     "closure": [
       {
         "tipologia": "Automatitzada",
-        "total": 20
-      },
-      {
-        "tipologia": "Handoff - Sense motiu",
-        "total": 7
-      },
-      {
-        "tipologia": "Massa reintents",
-        "total": 5
+        "total": 17
       },
       {
         "tipologia": "No cotitzable",
-        "total": 4
+        "total": 5
       },
       {
         "tipologia": "Ahorro negatiu",
+        "total": 5
+      },
+      {
+        "tipologia": "Handoff - Sense motiu",
+        "total": 5
+      },
+      {
+        "tipologia": "Massa reintents",
         "total": 4
       },
       {
         "tipologia": "Error generic",
-        "total": 3
+        "total": 4
       },
       {
         "tipologia": "Sense estalvi (llum)",
         "total": 1
+      },
+      {
+        "tipologia": "Sense estalvi (gas)",
+        "total": 1
       }
     ],
     "incorrect": {
-      "total_cot": 10,
+      "total_cot": 8,
       "cot_ko": 0,
       "ko_llum": 0,
       "ko_gas": 0
@@ -332,12 +340,77 @@
     },
     {
       "semana": "2026-05-11",
-      "conversaciones": 10,
+      "conversaciones": 15,
       "cotitzacions": 2,
       "contractes": 0
     }
   ],
   "raw": [
+    {
+      "conversation_id": "019e201a-d6c1-7993-a8b4-4a20de91a3b3",
+      "fecha": "2026-05-13",
+      "origen": "Landing",
+      "factura": 1,
+      "factura_chat": 1,
+      "factura_dades": 0,
+      "cotizacion": 0,
+      "contrato": 0,
+      "contrato_luz": 0,
+      "contrato_gas": 0,
+      "tipologia": "No cotizable"
+    },
+    {
+      "conversation_id": "019e1c67-91fa-7a63-bb53-15e8a71ab593",
+      "fecha": "2026-05-12",
+      "origen": "Landing",
+      "factura": 1,
+      "factura_chat": 1,
+      "factura_dades": 1,
+      "cotizacion": 0,
+      "contrato": 0,
+      "contrato_luz": 0,
+      "contrato_gas": 0,
+      "tipologia": "Ahorro negativo"
+    },
+    {
+      "conversation_id": "019e1b95-fd47-73f0-af31-6e93c0bd9fe6",
+      "fecha": "2026-05-12",
+      "origen": "Landing",
+      "factura": 1,
+      "factura_chat": 1,
+      "factura_dades": 1,
+      "cotizacion": 0,
+      "contrato": 0,
+      "contrato_luz": 0,
+      "contrato_gas": 0,
+      "tipologia": "Error genérico"
+    },
+    {
+      "conversation_id": "019e1b90-1778-7a91-8366-6756b84c5c3f",
+      "fecha": "2026-05-12",
+      "origen": "Landing",
+      "factura": 1,
+      "factura_chat": 1,
+      "factura_dades": 1,
+      "cotizacion": 0,
+      "contrato": 0,
+      "contrato_luz": 0,
+      "contrato_gas": 0,
+      "tipologia": "Sin ahorro (gas)"
+    },
+    {
+      "conversation_id": "019e1b34-43d1-7341-ac47-ffdb8eeac1eb",
+      "fecha": "2026-05-12",
+      "origen": "WA",
+      "factura": 1,
+      "factura_chat": 1,
+      "factura_dades": 1,
+      "cotizacion": 0,
+      "contrato": 0,
+      "contrato_luz": 0,
+      "contrato_gas": 0,
+      "tipologia": "Handoff - Sin motivo"
+    },
     {
       "conversation_id": "019e1b04-1f48-7091-9a4f-89c46cf72f7d",
       "fecha": "2026-05-12",
