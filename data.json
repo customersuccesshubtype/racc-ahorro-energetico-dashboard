@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-05-20T08:32:01Z",
+  "generated_at": "2026-05-21T08:39:08Z",
   "all": {
     "date_from": "2026-01-31",
-    "date_to": "2026-05-21",
+    "date_to": "2026-05-22",
     "funnel": [
       {
         "origen": "Landing",
@@ -101,7 +101,7 @@
   },
   "month": {
     "date_from": "2026-05-01",
-    "date_to": "2026-05-21",
+    "date_to": "2026-05-22",
     "funnel": [
       {
         "origen": "Landing",
@@ -191,16 +191,16 @@
     }
   },
   "week": {
-    "date_from": "2026-05-14",
-    "date_to": "2026-05-21",
+    "date_from": "2026-05-15",
+    "date_to": "2026-05-22",
     "funnel": [
       {
         "origen": "Landing",
-        "conversaciones": 25,
-        "factura_total": 19,
-        "factura_chat": 13,
-        "factura_dades": 16,
-        "cotitzacions": 8,
+        "conversaciones": 22,
+        "factura_total": 18,
+        "factura_chat": 12,
+        "factura_dades": 15,
+        "cotitzacions": 7,
         "contractes": 1,
         "contractes_llum": 1,
         "contractes_gas": 0
@@ -231,7 +231,7 @@
     "closure": [
       {
         "tipologia": "Automatitzada",
-        "total": 11
+        "total": 9
       },
       {
         "tipologia": "No cotitzable",
@@ -243,7 +243,7 @@
       },
       {
         "tipologia": "Handoff - Sense motiu",
-        "total": 6
+        "total": 5
       },
       {
         "tipologia": "Massa reintents",
@@ -255,7 +255,7 @@
       }
     ],
     "incorrect": {
-      "total_cot": 11,
+      "total_cot": 10,
       "cot_ko": 1,
       "ko_llum": 1,
       "ko_gas": 0
