@@ -1,25 +1,25 @@
 {
-  "generated_at": "2026-06-01T10:27:40Z",
+  "generated_at": "2026-06-02T09:15:23Z",
   "all": {
     "date_from": "2026-01-31",
-    "date_to": "2026-06-02",
+    "date_to": "2026-06-03",
     "funnel": [
       {
         "origen": "Landing",
-        "conversaciones": 1447,
-        "factura_total": 984,
-        "factura_chat": 797,
-        "factura_dades": 638,
-        "cotitzacions": 414,
+        "conversaciones": 1448,
+        "factura_total": 985,
+        "factura_chat": 798,
+        "factura_dades": 639,
+        "cotitzacions": 415,
         "contractes": 68,
         "contractes_llum": 57,
         "contractes_gas": 19
       },
       {
         "origen": "WA",
-        "conversaciones": 928,
-        "factura_total": 700,
-        "factura_chat": 579,
+        "conversaciones": 932,
+        "factura_total": 701,
+        "factura_chat": 580,
         "factura_dades": 442,
         "cotitzacions": 282,
         "contractes": 56,
@@ -41,15 +41,15 @@
     "closure": [
       {
         "tipologia": "Automatitzada",
-        "total": 875
+        "total": 876
       },
       {
         "tipologia": "No cotitzable",
-        "total": 358
+        "total": 360
       },
       {
         "tipologia": "Handoff - Sense motiu",
-        "total": 257
+        "total": 259
       },
       {
         "tipologia": "Error arxiu factura",
@@ -93,7 +93,7 @@
       }
     ],
     "incorrect": {
-      "total_cot": 840,
+      "total_cot": 841,
       "cot_ko": 63,
       "ko_llum": 50,
       "ko_gas": 13
@@ -101,26 +101,26 @@
   },
   "month": {
     "date_from": "2026-06-01",
-    "date_to": "2026-06-02",
+    "date_to": "2026-06-03",
     "funnel": [
       {
-        "origen": "Landing",
-        "conversaciones": 2,
+        "origen": "WA",
+        "conversaciones": 5,
         "factura_total": 2,
         "factura_chat": 2,
-        "factura_dades": 2,
-        "cotitzacions": 2,
+        "factura_dades": 1,
+        "cotitzacions": 1,
         "contractes": 0,
         "contractes_llum": 0,
         "contractes_gas": 0
       },
       {
-        "origen": "WA",
-        "conversaciones": 1,
-        "factura_total": 1,
-        "factura_chat": 1,
-        "factura_dades": 1,
-        "cotitzacions": 1,
+        "origen": "Landing",
+        "conversaciones": 3,
+        "factura_total": 3,
+        "factura_chat": 3,
+        "factura_dades": 3,
+        "cotitzacions": 3,
         "contractes": 0,
         "contractes_llum": 0,
         "contractes_gas": 0
@@ -129,29 +129,33 @@
     "closure": [
       {
         "tipologia": "Handoff - Sense motiu",
+        "total": 4
+      },
+      {
+        "tipologia": "No cotitzable",
         "total": 2
       },
       {
         "tipologia": "Automatitzada",
-        "total": 1
+        "total": 2
       }
     ],
     "incorrect": {
-      "total_cot": 4,
+      "total_cot": 5,
       "cot_ko": 0,
       "ko_llum": 0,
       "ko_gas": 0
     }
   },
   "week": {
-    "date_from": "2026-05-26",
-    "date_to": "2026-06-02",
+    "date_from": "2026-05-27",
+    "date_to": "2026-06-03",
     "funnel": [
       {
         "origen": "WA",
-        "conversaciones": 18,
-        "factura_total": 13,
-        "factura_chat": 13,
+        "conversaciones": 19,
+        "factura_total": 12,
+        "factura_chat": 12,
         "factura_dades": 6,
         "cotitzacions": 4,
         "contractes": 0,
@@ -160,10 +164,10 @@
       },
       {
         "origen": "Landing",
-        "conversaciones": 12,
-        "factura_total": 10,
-        "factura_chat": 9,
-        "factura_dades": 6,
+        "conversaciones": 10,
+        "factura_total": 8,
+        "factura_chat": 7,
+        "factura_dades": 5,
         "cotitzacions": 5,
         "contractes": 0,
         "contractes_llum": 0,
@@ -173,19 +177,15 @@
     "closure": [
       {
         "tipologia": "Automatitzada",
-        "total": 9
+        "total": 10
       },
       {
         "tipologia": "Handoff - Sense motiu",
-        "total": 9
+        "total": 10
       },
       {
         "tipologia": "No cotitzable",
-        "total": 7
-      },
-      {
-        "tipologia": "Sense estalvi (llum)",
-        "total": 2
+        "total": 5
       },
       {
         "tipologia": "Massa reintents",
@@ -193,6 +193,10 @@
       },
       {
         "tipologia": "Ahorro negatiu",
+        "total": 1
+      },
+      {
+        "tipologia": "Sense estalvi (llum)",
         "total": 1
       },
       {
@@ -318,12 +322,77 @@
     },
     {
       "semana": "2026-06-01",
-      "conversaciones": 3,
-      "cotitzacions": 3,
+      "conversaciones": 8,
+      "cotitzacions": 4,
       "contractes": 0
     }
   ],
   "raw": [
+    {
+      "conversation_id": "019e8739-2977-78d1-b580-e5c788786c69",
+      "fecha": "2026-06-02",
+      "origen": "WA",
+      "factura": 0,
+      "factura_chat": 0,
+      "factura_dades": 0,
+      "cotizacion": 0,
+      "contrato": 0,
+      "contrato_luz": 0,
+      "contrato_gas": 0,
+      "tipologia": "Handoff - Sin motivo"
+    },
+    {
+      "conversation_id": "019e86f0-78a3-7943-895a-1a0a74feb4c7",
+      "fecha": "2026-06-02",
+      "origen": "WA",
+      "factura": 0,
+      "factura_chat": 0,
+      "factura_dades": 0,
+      "cotizacion": 0,
+      "contrato": 0,
+      "contrato_luz": 0,
+      "contrato_gas": 0,
+      "tipologia": "Automatizada"
+    },
+    {
+      "conversation_id": "019e8572-bf61-78d1-8323-ed772919f6d0",
+      "fecha": "2026-06-01",
+      "origen": "WA",
+      "factura": 0,
+      "factura_chat": 0,
+      "factura_dades": 0,
+      "cotizacion": 0,
+      "contrato": 0,
+      "contrato_luz": 0,
+      "contrato_gas": 0,
+      "tipologia": "Automatizada"
+    },
+    {
+      "conversation_id": "019e8515-a421-7ba0-91d8-c722dce0b070",
+      "fecha": "2026-06-01",
+      "origen": "Landing",
+      "factura": 1,
+      "factura_chat": 1,
+      "factura_dades": 1,
+      "cotizacion": 1,
+      "contrato": 0,
+      "contrato_luz": 0,
+      "contrato_gas": 0,
+      "tipologia": "Handoff - Sin motivo"
+    },
+    {
+      "conversation_id": "019e838c-77fa-77e0-94b9-25eb3f912721",
+      "fecha": "2026-06-01",
+      "origen": "WA",
+      "factura": 1,
+      "factura_chat": 1,
+      "factura_dades": 0,
+      "cotizacion": 0,
+      "contrato": 0,
+      "contrato_luz": 0,
+      "contrato_gas": 0,
+      "tipologia": "No cotizable"
+    },
     {
       "conversation_id": "019e8226-5bda-7413-b22d-6439e0a82e47",
       "fecha": "2026-06-01",
@@ -348,7 +417,7 @@
       "contrato": 0,
       "contrato_luz": 0,
       "contrato_gas": 0,
-      "tipologia": "Automatizada"
+      "tipologia": "No cotizable"
     },
     {
       "conversation_id": "019e814e-c68b-7353-862a-8183dbe06e97",
