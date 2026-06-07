@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-06-06T07:49:47Z",
+  "generated_at": "2026-06-07T08:27:05Z",
   "all": {
     "date_from": "2026-01-31",
-    "date_to": "2026-06-07",
+    "date_to": "2026-06-08",
     "funnel": [
       {
         "origen": "Landing",
@@ -17,10 +17,10 @@
       },
       {
         "origen": "WA",
-        "conversaciones": 945,
-        "factura_total": 706,
-        "factura_chat": 585,
-        "factura_dades": 445,
+        "conversaciones": 947,
+        "factura_total": 707,
+        "factura_chat": 586,
+        "factura_dades": 446,
         "cotitzacions": 283,
         "contractes": 56,
         "contractes_llum": 46,
@@ -57,11 +57,11 @@
       },
       {
         "tipologia": "Ahorro negatiu",
-        "total": 166
+        "total": 167
       },
       {
         "tipologia": "Massa reintents",
-        "total": 159
+        "total": 160
       },
       {
         "tipologia": "Sense estalvi (llum)",
@@ -101,14 +101,14 @@
   },
   "month": {
     "date_from": "2026-06-01",
-    "date_to": "2026-06-07",
+    "date_to": "2026-06-08",
     "funnel": [
       {
         "origen": "WA",
-        "conversaciones": 19,
-        "factura_total": 8,
-        "factura_chat": 8,
-        "factura_dades": 5,
+        "conversaciones": 21,
+        "factura_total": 9,
+        "factura_chat": 9,
+        "factura_dades": 6,
         "cotitzacions": 3,
         "contractes": 0,
         "contractes_llum": 0,
@@ -136,15 +136,15 @@
         "total": 8
       },
       {
-        "tipologia": "No cotitzable",
-        "total": 3
-      },
-      {
         "tipologia": "Massa reintents",
-        "total": 3
+        "total": 4
       },
       {
         "tipologia": "Ahorro negatiu",
+        "total": 4
+      },
+      {
+        "tipologia": "No cotitzable",
         "total": 3
       },
       {
@@ -160,15 +160,15 @@
     }
   },
   "week": {
-    "date_from": "2026-05-31",
-    "date_to": "2026-06-07",
+    "date_from": "2026-06-01",
+    "date_to": "2026-06-08",
     "funnel": [
       {
         "origen": "WA",
-        "conversaciones": 19,
-        "factura_total": 8,
-        "factura_chat": 8,
-        "factura_dades": 5,
+        "conversaciones": 21,
+        "factura_total": 9,
+        "factura_chat": 9,
+        "factura_dades": 6,
         "cotitzacions": 3,
         "contractes": 0,
         "contractes_llum": 0,
@@ -176,9 +176,9 @@
       },
       {
         "origen": "Landing",
-        "conversaciones": 13,
-        "factura_total": 9,
-        "factura_chat": 8,
+        "conversaciones": 12,
+        "factura_total": 8,
+        "factura_chat": 7,
         "factura_dades": 8,
         "cotitzacions": 7,
         "contractes": 1,
@@ -193,18 +193,18 @@
       },
       {
         "tipologia": "Handoff - Sense motiu",
-        "total": 9
-      },
-      {
-        "tipologia": "No cotitzable",
-        "total": 3
+        "total": 8
       },
       {
         "tipologia": "Massa reintents",
-        "total": 3
+        "total": 4
       },
       {
         "tipologia": "Ahorro negatiu",
+        "total": 4
+      },
+      {
+        "tipologia": "No cotitzable",
         "total": 3
       },
       {
@@ -330,12 +330,38 @@
     },
     {
       "semana": "2026-06-01",
-      "conversaciones": 30,
+      "conversaciones": 32,
       "cotitzacions": 9,
       "contractes": 1
     }
   ],
   "raw": [
+    {
+      "conversation_id": "019e9ccc-018f-7501-8cbe-d16d043fd230",
+      "fecha": "2026-06-06",
+      "origen": "WA",
+      "factura": 1,
+      "factura_chat": 1,
+      "factura_dades": 1,
+      "cotizacion": 0,
+      "contrato": 0,
+      "contrato_luz": 0,
+      "contrato_gas": 0,
+      "tipologia": "Ahorro negativo"
+    },
+    {
+      "conversation_id": "019e9bef-2692-7902-bd17-de7c3152658f",
+      "fecha": "2026-06-06",
+      "origen": "WA",
+      "factura": 0,
+      "factura_chat": 0,
+      "factura_dades": 0,
+      "cotizacion": 0,
+      "contrato": 0,
+      "contrato_luz": 0,
+      "contrato_gas": 0,
+      "tipologia": "Demasiados reintentos"
+    },
     {
       "conversation_id": "019e938c-dd4d-75b2-8231-9ee594d298ec",
       "fecha": "2026-06-05",
