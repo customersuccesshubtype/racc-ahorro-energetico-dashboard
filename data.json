@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-06-20T08:25:08Z",
+  "generated_at": "2026-06-21T08:59:57Z",
   "all": {
     "date_from": "2026-01-31",
-    "date_to": "2026-06-21",
+    "date_to": "2026-06-22",
     "funnel": [
       {
         "origen": "Landing",
-        "conversaciones": 1467,
+        "conversaciones": 1468,
         "factura_total": 994,
         "factura_chat": 805,
         "factura_dades": 646,
@@ -61,7 +61,7 @@
       },
       {
         "tipologia": "Massa reintents",
-        "total": 162
+        "total": 163
       },
       {
         "tipologia": "Sense estalvi (llum)",
@@ -101,7 +101,7 @@
   },
   "month": {
     "date_from": "2026-06-01",
-    "date_to": "2026-06-21",
+    "date_to": "2026-06-22",
     "funnel": [
       {
         "origen": "WA",
@@ -127,7 +127,7 @@
       },
       {
         "origen": "Landing",
-        "conversaciones": 22,
+        "conversaciones": 23,
         "factura_total": 12,
         "factura_chat": 10,
         "factura_dades": 10,
@@ -156,7 +156,7 @@
       },
       {
         "tipologia": "Massa reintents",
-        "total": 6
+        "total": 7
       },
       {
         "tipologia": "No titular (elec)",
@@ -179,12 +179,12 @@
     }
   },
   "week": {
-    "date_from": "2026-06-14",
-    "date_to": "2026-06-21",
+    "date_from": "2026-06-15",
+    "date_to": "2026-06-22",
     "funnel": [
       {
         "origen": "Meta",
-        "conversaciones": 17,
+        "conversaciones": 10,
         "factura_total": 0,
         "factura_chat": 0,
         "factura_dades": 0,
@@ -219,7 +219,7 @@
     "closure": [
       {
         "tipologia": "Automatitzada",
-        "total": 20
+        "total": 13
       },
       {
         "tipologia": "No cotitzable",
@@ -230,16 +230,12 @@
         "total": 3
       },
       {
-        "tipologia": "Ahorro negatiu",
+        "tipologia": "Massa reintents",
         "total": 2
       },
       {
-        "tipologia": "Massa reintents",
-        "total": 1
-      },
-      {
-        "tipologia": "Handoff Estalvi Energetic",
-        "total": 1
+        "tipologia": "Ahorro negatiu",
+        "total": 2
       }
     ],
     "incorrect": {
@@ -372,12 +368,25 @@
     },
     {
       "semana": "2026-06-15",
-      "conversaciones": 23,
+      "conversaciones": 24,
       "cotitzacions": 1,
       "contractes": 1
     }
   ],
   "raw": [
+    {
+      "conversation_id": "019ee953-73ba-7b90-8a02-1e828f4019d3",
+      "fecha": "2026-06-21",
+      "origen": "Landing",
+      "factura": 0,
+      "factura_chat": 0,
+      "factura_dades": 0,
+      "cotizacion": 0,
+      "contrato": 0,
+      "contrato_luz": 0,
+      "contrato_gas": 0,
+      "tipologia": "Demasiados reintentos"
+    },
     {
       "conversation_id": "019ee091-455e-7713-880b-0cb1a6a04525",
       "fecha": "2026-06-19",
