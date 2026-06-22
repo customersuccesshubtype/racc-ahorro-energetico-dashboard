@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-06-21T08:59:57Z",
+  "generated_at": "2026-06-22T10:44:57Z",
   "all": {
     "date_from": "2026-01-31",
-    "date_to": "2026-06-22",
+    "date_to": "2026-06-23",
     "funnel": [
       {
         "origen": "Landing",
@@ -17,7 +17,7 @@
       },
       {
         "origen": "WA",
-        "conversaciones": 974,
+        "conversaciones": 976,
         "factura_total": 723,
         "factura_chat": 596,
         "factura_dades": 458,
@@ -28,7 +28,7 @@
       },
       {
         "origen": "Meta",
-        "conversaciones": 44,
+        "conversaciones": 45,
         "factura_total": 0,
         "factura_chat": 0,
         "factura_dades": 0,
@@ -41,7 +41,7 @@
     "closure": [
       {
         "tipologia": "Automatitzada",
-        "total": 930
+        "total": 932
       },
       {
         "tipologia": "No cotitzable",
@@ -81,7 +81,7 @@
       },
       {
         "tipologia": "Handoff Estalvi Energetic",
-        "total": 38
+        "total": 39
       },
       {
         "tipologia": "Ahorro > 70%",
@@ -101,11 +101,11 @@
   },
   "month": {
     "date_from": "2026-06-01",
-    "date_to": "2026-06-22",
+    "date_to": "2026-06-23",
     "funnel": [
       {
         "origen": "WA",
-        "conversaciones": 48,
+        "conversaciones": 50,
         "factura_total": 25,
         "factura_chat": 19,
         "factura_dades": 18,
@@ -116,7 +116,7 @@
       },
       {
         "origen": "Meta",
-        "conversaciones": 31,
+        "conversaciones": 32,
         "factura_total": 0,
         "factura_chat": 0,
         "factura_dades": 0,
@@ -140,7 +140,7 @@
     "closure": [
       {
         "tipologia": "Automatitzada",
-        "total": 57
+        "total": 59
       },
       {
         "tipologia": "Handoff - Sense motiu",
@@ -163,11 +163,11 @@
         "total": 3
       },
       {
-        "tipologia": "Sense estalvi (llum)",
-        "total": 1
+        "tipologia": "Handoff Estalvi Energetic",
+        "total": 2
       },
       {
-        "tipologia": "Handoff Estalvi Energetic",
+        "tipologia": "Sense estalvi (llum)",
         "total": 1
       }
     ],
@@ -179,12 +179,23 @@
     }
   },
   "week": {
-    "date_from": "2026-06-15",
-    "date_to": "2026-06-22",
+    "date_from": "2026-06-16",
+    "date_to": "2026-06-23",
     "funnel": [
       {
-        "origen": "Meta",
+        "origen": "WA",
         "conversaciones": 10,
+        "factura_total": 5,
+        "factura_chat": 4,
+        "factura_dades": 3,
+        "cotitzacions": 1,
+        "contractes": 1,
+        "contractes_llum": 0,
+        "contractes_gas": 1
+      },
+      {
+        "origen": "Meta",
+        "conversaciones": 8,
         "factura_total": 0,
         "factura_chat": 0,
         "factura_dades": 0,
@@ -192,17 +203,6 @@
         "contractes": 0,
         "contractes_llum": 0,
         "contractes_gas": 0
-      },
-      {
-        "origen": "WA",
-        "conversaciones": 9,
-        "factura_total": 6,
-        "factura_chat": 5,
-        "factura_dades": 3,
-        "cotitzacions": 1,
-        "contractes": 1,
-        "contractes_llum": 0,
-        "contractes_gas": 1
       },
       {
         "origen": "Landing",
@@ -219,7 +219,7 @@
     "closure": [
       {
         "tipologia": "Automatitzada",
-        "total": 13
+        "total": 12
       },
       {
         "tipologia": "No cotitzable",
@@ -230,12 +230,16 @@
         "total": 3
       },
       {
-        "tipologia": "Massa reintents",
+        "tipologia": "Ahorro negatiu",
         "total": 2
       },
       {
-        "tipologia": "Ahorro negatiu",
-        "total": 2
+        "tipologia": "Massa reintents",
+        "total": 1
+      },
+      {
+        "tipologia": "Handoff Estalvi Energetic",
+        "total": 1
       }
     ],
     "incorrect": {
@@ -368,12 +372,57 @@
     },
     {
       "semana": "2026-06-15",
-      "conversaciones": 24,
+      "conversaciones": 26,
       "cotitzacions": 1,
       "contractes": 1
+    },
+    {
+      "semana": "2026-06-22",
+      "conversaciones": 1,
+      "cotitzacions": 0,
+      "contractes": 0
     }
   ],
   "raw": [
+    {
+      "conversation_id": "019eee4a-a32e-72d3-a870-5fa355041f0b",
+      "fecha": "2026-06-22",
+      "origen": "WA",
+      "factura": 0,
+      "factura_chat": 0,
+      "factura_dades": 0,
+      "cotizacion": 0,
+      "contrato": 0,
+      "contrato_luz": 0,
+      "contrato_gas": 0,
+      "tipologia": "Automatizada"
+    },
+    {
+      "conversation_id": "019eeac7-4647-7f83-af3a-48f44264e00b",
+      "fecha": "2026-06-21",
+      "origen": "WA",
+      "factura": 0,
+      "factura_chat": 0,
+      "factura_dades": 0,
+      "cotizacion": 0,
+      "contrato": 0,
+      "contrato_luz": 0,
+      "contrato_gas": 0,
+      "tipologia": "Handoff Estalvi Energètic"
+    },
+    {
+      "conversation_id": "019ee975-4ef5-7de2-ba9d-872067685d78",
+      "fecha": "2026-06-21",
+      "origen": "Meta",
+      "factura": 0,
+      "factura_chat": 0,
+      "factura_dades": 0,
+      "cotizacion": 0,
+      "contrato": 0,
+      "contrato_luz": 0,
+      "contrato_gas": 0,
+      "tipologia": "Automatizada"
+    },
     {
       "conversation_id": "019ee953-73ba-7b90-8a02-1e828f4019d3",
       "fecha": "2026-06-21",
