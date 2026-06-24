@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-06-23T08:32:56Z",
+  "generated_at": "2026-06-24T08:27:39Z",
   "all": {
     "date_from": "2026-01-31",
-    "date_to": "2026-06-24",
+    "date_to": "2026-06-25",
     "funnel": [
       {
         "origen": "Landing",
-        "conversaciones": 1469,
-        "factura_total": 994,
-        "factura_chat": 805,
+        "conversaciones": 1471,
+        "factura_total": 995,
+        "factura_chat": 806,
         "factura_dades": 646,
         "cotitzacions": 420,
         "contractes": 69,
@@ -17,18 +17,18 @@
       },
       {
         "origen": "WA",
-        "conversaciones": 980,
-        "factura_total": 724,
-        "factura_chat": 597,
-        "factura_dades": 458,
-        "cotitzacions": 291,
+        "conversaciones": 981,
+        "factura_total": 725,
+        "factura_chat": 598,
+        "factura_dades": 459,
+        "cotitzacions": 292,
         "contractes": 58,
         "contractes_llum": 47,
         "contractes_gas": 24
       },
       {
         "origen": "Meta",
-        "conversaciones": 46,
+        "conversaciones": 49,
         "factura_total": 0,
         "factura_chat": 0,
         "factura_dades": 0,
@@ -41,7 +41,7 @@
     "closure": [
       {
         "tipologia": "Automatitzada",
-        "total": 937
+        "total": 941
       },
       {
         "tipologia": "No cotitzable",
@@ -61,7 +61,7 @@
       },
       {
         "tipologia": "Massa reintents",
-        "total": 163
+        "total": 164
       },
       {
         "tipologia": "Sense estalvi (llum)",
@@ -81,7 +81,7 @@
       },
       {
         "tipologia": "Handoff Estalvi Energetic",
-        "total": 39
+        "total": 40
       },
       {
         "tipologia": "Ahorro > 70%",
@@ -93,7 +93,7 @@
       }
     ],
     "incorrect": {
-      "total_cot": 858,
+      "total_cot": 859,
       "cot_ko": 64,
       "ko_llum": 51,
       "ko_gas": 13
@@ -101,22 +101,22 @@
   },
   "month": {
     "date_from": "2026-06-01",
-    "date_to": "2026-06-24",
+    "date_to": "2026-06-25",
     "funnel": [
       {
         "origen": "WA",
-        "conversaciones": 54,
-        "factura_total": 26,
-        "factura_chat": 20,
-        "factura_dades": 18,
-        "cotitzacions": 11,
+        "conversaciones": 55,
+        "factura_total": 27,
+        "factura_chat": 21,
+        "factura_dades": 19,
+        "cotitzacions": 12,
         "contractes": 2,
         "contractes_llum": 1,
         "contractes_gas": 1
       },
       {
         "origen": "Meta",
-        "conversaciones": 33,
+        "conversaciones": 36,
         "factura_total": 0,
         "factura_chat": 0,
         "factura_dades": 0,
@@ -127,9 +127,9 @@
       },
       {
         "origen": "Landing",
-        "conversaciones": 24,
-        "factura_total": 12,
-        "factura_chat": 10,
+        "conversaciones": 26,
+        "factura_total": 13,
+        "factura_chat": 11,
         "factura_dades": 10,
         "cotitzacions": 8,
         "contractes": 1,
@@ -140,7 +140,7 @@
     "closure": [
       {
         "tipologia": "Automatitzada",
-        "total": 64
+        "total": 68
       },
       {
         "tipologia": "Handoff - Sense motiu",
@@ -151,12 +151,12 @@
         "total": 11
       },
       {
-        "tipologia": "Ahorro negatiu",
+        "tipologia": "Massa reintents",
         "total": 8
       },
       {
-        "tipologia": "Massa reintents",
-        "total": 7
+        "tipologia": "Ahorro negatiu",
+        "total": 8
       },
       {
         "tipologia": "No titular (elec)",
@@ -164,7 +164,7 @@
       },
       {
         "tipologia": "Handoff Estalvi Energetic",
-        "total": 2
+        "total": 3
       },
       {
         "tipologia": "Sense estalvi (llum)",
@@ -172,32 +172,32 @@
       }
     ],
     "incorrect": {
-      "total_cot": 22,
+      "total_cot": 23,
       "cot_ko": 1,
       "ko_llum": 1,
       "ko_gas": 0
     }
   },
   "week": {
-    "date_from": "2026-06-17",
-    "date_to": "2026-06-24",
+    "date_from": "2026-06-18",
+    "date_to": "2026-06-25",
     "funnel": [
       {
         "origen": "WA",
-        "conversaciones": 12,
-        "factura_total": 5,
-        "factura_chat": 4,
-        "factura_dades": 3,
+        "conversaciones": 9,
+        "factura_total": 3,
+        "factura_chat": 3,
+        "factura_dades": 2,
         "cotitzacions": 1,
-        "contractes": 1,
+        "contractes": 0,
         "contractes_llum": 0,
-        "contractes_gas": 1
+        "contractes_gas": 0
       },
       {
-        "origen": "Meta",
-        "conversaciones": 6,
-        "factura_total": 0,
-        "factura_chat": 0,
+        "origen": "Landing",
+        "conversaciones": 7,
+        "factura_total": 1,
+        "factura_chat": 1,
         "factura_dades": 0,
         "cotitzacions": 0,
         "contractes": 0,
@@ -205,8 +205,8 @@
         "contractes_gas": 0
       },
       {
-        "origen": "Landing",
-        "conversaciones": 5,
+        "origen": "Meta",
+        "conversaciones": 6,
         "factura_total": 0,
         "factura_chat": 0,
         "factura_dades": 0,
@@ -222,23 +222,19 @@
         "total": 14
       },
       {
-        "tipologia": "No cotitzable",
+        "tipologia": "Massa reintents",
         "total": 3
       },
       {
-        "tipologia": "Ahorro negatiu",
+        "tipologia": "No cotitzable",
         "total": 2
-      },
-      {
-        "tipologia": "Handoff - Sense motiu",
-        "total": 2
-      },
-      {
-        "tipologia": "Massa reintents",
-        "total": 1
       },
       {
         "tipologia": "Handoff Estalvi Energetic",
+        "total": 2
+      },
+      {
+        "tipologia": "Ahorro negatiu",
         "total": 1
       }
     ],
@@ -378,12 +374,90 @@
     },
     {
       "semana": "2026-06-22",
-      "conversaciones": 7,
-      "cotitzacions": 0,
+      "conversaciones": 13,
+      "cotitzacions": 1,
       "contractes": 0
     }
   ],
   "raw": [
+    {
+      "conversation_id": "019ef858-7031-7420-b191-12d246a0a276",
+      "fecha": "2026-06-24",
+      "origen": "WA",
+      "factura": 1,
+      "factura_chat": 1,
+      "factura_dades": 1,
+      "cotizacion": 1,
+      "contrato": 0,
+      "contrato_luz": 0,
+      "contrato_gas": 0,
+      "tipologia": "Automatizada"
+    },
+    {
+      "conversation_id": "019ef5f6-c850-7690-95e3-9a39d900290d",
+      "fecha": "2026-06-23",
+      "origen": "Meta",
+      "factura": 0,
+      "factura_chat": 0,
+      "factura_dades": 0,
+      "cotizacion": 0,
+      "contrato": 0,
+      "contrato_luz": 0,
+      "contrato_gas": 0,
+      "tipologia": "Automatizada"
+    },
+    {
+      "conversation_id": "019ef5d7-4e12-73a2-98cb-f210f53f6722",
+      "fecha": "2026-06-23",
+      "origen": "Meta",
+      "factura": 0,
+      "factura_chat": 0,
+      "factura_dades": 0,
+      "cotizacion": 0,
+      "contrato": 0,
+      "contrato_luz": 0,
+      "contrato_gas": 0,
+      "tipologia": "Automatizada"
+    },
+    {
+      "conversation_id": "019ef527-feed-7a30-9695-60c0a6168aa0",
+      "fecha": "2026-06-23",
+      "origen": "Landing",
+      "factura": 0,
+      "factura_chat": 0,
+      "factura_dades": 0,
+      "cotizacion": 0,
+      "contrato": 0,
+      "contrato_luz": 0,
+      "contrato_gas": 0,
+      "tipologia": "Handoff Estalvi Energètic"
+    },
+    {
+      "conversation_id": "019ef3fa-52a3-74e3-8428-f36135d0039c",
+      "fecha": "2026-06-23",
+      "origen": "Meta",
+      "factura": 0,
+      "factura_chat": 0,
+      "factura_dades": 0,
+      "cotizacion": 0,
+      "contrato": 0,
+      "contrato_luz": 0,
+      "contrato_gas": 0,
+      "tipologia": "Automatizada"
+    },
+    {
+      "conversation_id": "019ef39d-1320-7482-9000-834bbe5ad5fc",
+      "fecha": "2026-06-23",
+      "origen": "Landing",
+      "factura": 1,
+      "factura_chat": 1,
+      "factura_dades": 0,
+      "cotizacion": 0,
+      "contrato": 0,
+      "contrato_luz": 0,
+      "contrato_gas": 0,
+      "tipologia": "Demasiados reintentos"
+    },
     {
       "conversation_id": "019ef37e-ee93-7441-81a4-ae2fe8344c40",
       "fecha": "2026-06-23",
