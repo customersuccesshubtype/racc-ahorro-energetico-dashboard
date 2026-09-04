@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-03T09:34:49Z",
+  "generated_at": "2026-09-04T09:26:40Z",
   "all": {
     "date_from": "2026-01-31",
-    "date_to": "2026-09-04",
+    "date_to": "2026-09-05",
     "funnel": [
       {
         "origen": "Landing",
@@ -101,7 +101,7 @@
   },
   "month": {
     "date_from": "2026-09-01",
-    "date_to": "2026-09-04",
+    "date_to": "2026-09-05",
     "funnel": [
       {
         "origen": "Meta",
@@ -163,12 +163,12 @@
     }
   },
   "week": {
-    "date_from": "2026-08-28",
-    "date_to": "2026-09-04",
+    "date_from": "2026-08-29",
+    "date_to": "2026-09-05",
     "funnel": [
       {
         "origen": "Meta",
-        "conversaciones": 34,
+        "conversaciones": 31,
         "factura_total": 0,
         "factura_chat": 0,
         "factura_dades": 0,
@@ -179,10 +179,10 @@
       },
       {
         "origen": "WA",
-        "conversaciones": 16,
-        "factura_total": 9,
-        "factura_chat": 8,
-        "factura_dades": 4,
+        "conversaciones": 12,
+        "factura_total": 8,
+        "factura_chat": 7,
+        "factura_dades": 3,
         "cotitzacions": 1,
         "contractes": 0,
         "contractes_llum": 0,
@@ -203,19 +203,19 @@
     "closure": [
       {
         "tipologia": "Automatitzada",
-        "total": 38
+        "total": 34
       },
       {
         "tipologia": "No cotitzable",
-        "total": 5
+        "total": 4
       },
       {
         "tipologia": "Ahorro negatiu",
-        "total": 5
+        "total": 4
       },
       {
         "tipologia": "Handoff - Sense motiu",
-        "total": 3
+        "total": 2
       },
       {
         "tipologia": "Error arxiu factura",
