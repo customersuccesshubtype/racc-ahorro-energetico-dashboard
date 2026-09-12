@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-11T09:28:49Z",
+  "generated_at": "2026-09-12T09:09:16Z",
   "all": {
     "date_from": "2026-01-31",
-    "date_to": "2026-09-12",
+    "date_to": "2026-09-13",
     "funnel": [
       {
         "origen": "Landing",
@@ -17,7 +17,7 @@
       },
       {
         "origen": "WA",
-        "conversaciones": 1180,
+        "conversaciones": 1181,
         "factura_total": 806,
         "factura_chat": 675,
         "factura_dades": 486,
@@ -41,7 +41,7 @@
     "closure": [
       {
         "tipologia": "Automatitzada",
-        "total": 1604
+        "total": 1605
       },
       {
         "tipologia": "No cotitzable",
@@ -101,11 +101,11 @@
   },
   "month": {
     "date_from": "2026-09-01",
-    "date_to": "2026-09-12",
+    "date_to": "2026-09-13",
     "funnel": [
       {
         "origen": "WA",
-        "conversaciones": 17,
+        "conversaciones": 18,
         "factura_total": 14,
         "factura_chat": 11,
         "factura_dades": 7,
@@ -140,7 +140,7 @@
     "closure": [
       {
         "tipologia": "Automatitzada",
-        "total": 13
+        "total": 14
       },
       {
         "tipologia": "No cotitzable",
@@ -167,8 +167,8 @@
     }
   },
   "week": {
-    "date_from": "2026-09-05",
-    "date_to": "2026-09-12",
+    "date_from": "2026-09-06",
+    "date_to": "2026-09-13",
     "funnel": [
       {
         "origen": "WA",
@@ -413,12 +413,25 @@
     },
     {
       "semana": "2026-09-07",
-      "conversaciones": 15,
+      "conversaciones": 16,
       "cotitzacions": 2,
       "contractes": 0
     }
   ],
   "raw": [
+    {
+      "conversation_id": "01a091f4-817d-7f63-98a1-cb4b7454dc34",
+      "fecha": "2026-09-11",
+      "origen": "WA",
+      "factura": 0,
+      "factura_chat": 0,
+      "factura_dades": 0,
+      "cotizacion": 0,
+      "contrato": 0,
+      "contrato_luz": 0,
+      "contrato_gas": 0,
+      "tipologia": "Automatizada"
+    },
     {
       "conversation_id": "01a08f9f-2b7d-7d01-bd63-509d5c2b0d42",
       "fecha": "2026-09-11",
