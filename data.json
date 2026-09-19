@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-18T09:33:39Z",
+  "generated_at": "2026-09-19T09:19:34Z",
   "all": {
     "date_from": "2026-01-31",
-    "date_to": "2026-09-19",
+    "date_to": "2026-09-20",
     "funnel": [
       {
         "origen": "Landing",
@@ -101,7 +101,7 @@
   },
   "month": {
     "date_from": "2026-09-01",
-    "date_to": "2026-09-19",
+    "date_to": "2026-09-20",
     "funnel": [
       {
         "origen": "WA",
@@ -171,14 +171,14 @@
     }
   },
   "week": {
-    "date_from": "2026-09-12",
-    "date_to": "2026-09-19",
+    "date_from": "2026-09-13",
+    "date_to": "2026-09-20",
     "funnel": [
       {
         "origen": "WA",
-        "conversaciones": 17,
-        "factura_total": 9,
-        "factura_chat": 9,
+        "conversaciones": 16,
+        "factura_total": 8,
+        "factura_chat": 8,
         "factura_dades": 1,
         "cotitzacions": 0,
         "contractes": 0,
@@ -211,7 +211,7 @@
     "closure": [
       {
         "tipologia": "Automatitzada",
-        "total": 8
+        "total": 7
       },
       {
         "tipologia": "Handoff - Sense motiu",
