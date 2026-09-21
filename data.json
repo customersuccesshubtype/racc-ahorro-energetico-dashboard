@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-20T09:42:09Z",
+  "generated_at": "2026-09-21T10:34:44Z",
   "all": {
     "date_from": "2026-01-31",
-    "date_to": "2026-09-21",
+    "date_to": "2026-09-22",
     "funnel": [
       {
         "origen": "Landing",
@@ -17,7 +17,7 @@
       },
       {
         "origen": "WA",
-        "conversaciones": 1198,
+        "conversaciones": 1200,
         "factura_total": 815,
         "factura_chat": 684,
         "factura_dades": 487,
@@ -49,7 +49,7 @@
       },
       {
         "tipologia": "Handoff - Sense motiu",
-        "total": 313
+        "total": 315
       },
       {
         "tipologia": "Error arxiu factura",
@@ -101,11 +101,11 @@
   },
   "month": {
     "date_from": "2026-09-01",
-    "date_to": "2026-09-21",
+    "date_to": "2026-09-22",
     "funnel": [
       {
         "origen": "WA",
-        "conversaciones": 35,
+        "conversaciones": 37,
         "factura_total": 23,
         "factura_chat": 20,
         "factura_dades": 8,
@@ -143,12 +143,12 @@
         "total": 22
       },
       {
-        "tipologia": "No cotitzable",
-        "total": 10
+        "tipologia": "Handoff - Sense motiu",
+        "total": 11
       },
       {
-        "tipologia": "Handoff - Sense motiu",
-        "total": 9
+        "tipologia": "No cotitzable",
+        "total": 10
       },
       {
         "tipologia": "Ahorro negatiu",
@@ -171,14 +171,14 @@
     }
   },
   "week": {
-    "date_from": "2026-09-14",
-    "date_to": "2026-09-21",
+    "date_from": "2026-09-15",
+    "date_to": "2026-09-22",
     "funnel": [
       {
         "origen": "WA",
-        "conversaciones": 16,
-        "factura_total": 8,
-        "factura_chat": 8,
+        "conversaciones": 15,
+        "factura_total": 6,
+        "factura_chat": 6,
         "factura_dades": 1,
         "cotitzacions": 0,
         "contractes": 0,
@@ -187,21 +187,10 @@
       },
       {
         "origen": "Landing",
-        "conversaciones": 3,
-        "factura_total": 2,
-        "factura_chat": 2,
+        "conversaciones": 2,
+        "factura_total": 1,
+        "factura_chat": 1,
         "factura_dades": 1,
-        "cotitzacions": 0,
-        "contractes": 0,
-        "contractes_llum": 0,
-        "contractes_gas": 0
-      },
-      {
-        "origen": "Meta",
-        "conversaciones": 1,
-        "factura_total": 0,
-        "factura_chat": 0,
-        "factura_dades": 0,
         "cotitzacions": 0,
         "contractes": 0,
         "contractes_llum": 0,
@@ -210,24 +199,20 @@
     ],
     "closure": [
       {
-        "tipologia": "Automatitzada",
+        "tipologia": "Handoff - Sense motiu",
         "total": 7
       },
       {
-        "tipologia": "Handoff - Sense motiu",
+        "tipologia": "Automatitzada",
         "total": 6
       },
       {
         "tipologia": "No cotitzable",
-        "total": 4
+        "total": 2
       },
       {
         "tipologia": "Ahorro negatiu",
         "total": 2
-      },
-      {
-        "tipologia": "Massa reintents",
-        "total": 1
       }
     ],
     "incorrect": {
@@ -441,9 +426,41 @@
       "conversaciones": 20,
       "cotitzacions": 0,
       "contractes": 0
+    },
+    {
+      "semana": "2026-09-21",
+      "conversaciones": 2,
+      "cotitzacions": 0,
+      "contractes": 0
     }
   ],
   "raw": [
+    {
+      "conversation_id": "01a0c353-a9f4-7140-8b10-eed7c92c1a35",
+      "fecha": "2026-09-21",
+      "origen": "WA",
+      "factura": 0,
+      "factura_chat": 0,
+      "factura_dades": 0,
+      "cotizacion": 0,
+      "contrato": 0,
+      "contrato_luz": 0,
+      "contrato_gas": 0,
+      "tipologia": "Handoff - Sin motivo"
+    },
+    {
+      "conversation_id": "01a0beb0-b7dc-76b3-9ee6-45b048ef356c",
+      "fecha": "2026-09-21",
+      "origen": "WA",
+      "factura": 0,
+      "factura_chat": 0,
+      "factura_dades": 0,
+      "cotizacion": 0,
+      "contrato": 0,
+      "contrato_luz": 0,
+      "contrato_gas": 0,
+      "tipologia": "Handoff - Sin motivo"
+    },
     {
       "conversation_id": "01a0a97a-a0fb-7773-8480-6839801fd79f",
       "fecha": "2026-09-18",
