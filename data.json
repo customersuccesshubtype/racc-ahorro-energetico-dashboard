@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-10-01T11:29:22Z",
+  "generated_at": "2026-10-02T10:59:01Z",
   "all": {
     "date_from": "2026-01-31",
-    "date_to": "2026-10-02",
+    "date_to": "2026-10-03",
     "funnel": [
       {
         "origen": "Landing",
-        "conversaciones": 1527,
+        "conversaciones": 1528,
         "factura_total": 1019,
         "factura_chat": 829,
         "factura_dades": 656,
@@ -17,10 +17,10 @@
       },
       {
         "origen": "WA",
-        "conversaciones": 1217,
-        "factura_total": 822,
-        "factura_chat": 690,
-        "factura_dades": 488,
+        "conversaciones": 1220,
+        "factura_total": 826,
+        "factura_chat": 694,
+        "factura_dades": 489,
         "cotitzacions": 306,
         "contractes": 58,
         "contractes_llum": 47,
@@ -41,27 +41,27 @@
     "closure": [
       {
         "tipologia": "Automatitzada",
-        "total": 1624
+        "total": 1623
       },
       {
         "tipologia": "No cotitzable",
-        "total": 415
+        "total": 416
       },
       {
         "tipologia": "Handoff - Sense motiu",
-        "total": 320
+        "total": 321
       },
       {
         "tipologia": "Error arxiu factura",
-        "total": 215
+        "total": 216
       },
       {
         "tipologia": "Ahorro negatiu",
-        "total": 187
+        "total": 188
       },
       {
         "tipologia": "Massa reintents",
-        "total": 184
+        "total": 185
       },
       {
         "tipologia": "Sense estalvi (llum)",
@@ -101,10 +101,21 @@
   },
   "month": {
     "date_from": "2026-10-01",
-    "date_to": "2026-10-02",
+    "date_to": "2026-10-03",
     "funnel": [
       {
         "origen": "WA",
+        "conversaciones": 4,
+        "factura_total": 4,
+        "factura_chat": 4,
+        "factura_dades": 1,
+        "cotitzacions": 0,
+        "contractes": 0,
+        "contractes_llum": 0,
+        "contractes_gas": 0
+      },
+      {
+        "origen": "Landing",
         "conversaciones": 1,
         "factura_total": 0,
         "factura_chat": 0,
@@ -117,7 +128,23 @@
     ],
     "closure": [
       {
-        "tipologia": "Automatitzada",
+        "tipologia": "No cotitzable",
+        "total": 1
+      },
+      {
+        "tipologia": "Massa reintents",
+        "total": 1
+      },
+      {
+        "tipologia": "Ahorro negatiu",
+        "total": 1
+      },
+      {
+        "tipologia": "Handoff - Sense motiu",
+        "total": 1
+      },
+      {
+        "tipologia": "Error arxiu factura",
         "total": 1
       }
     ],
@@ -129,15 +156,15 @@
     }
   },
   "week": {
-    "date_from": "2026-09-25",
-    "date_to": "2026-10-02",
+    "date_from": "2026-09-26",
+    "date_to": "2026-10-03",
     "funnel": [
       {
         "origen": "WA",
         "conversaciones": 12,
-        "factura_total": 5,
-        "factura_chat": 5,
-        "factura_dades": 0,
+        "factura_total": 8,
+        "factura_chat": 8,
+        "factura_dades": 1,
         "cotitzacions": 0,
         "contractes": 0,
         "contractes_llum": 0,
@@ -145,7 +172,7 @@
       },
       {
         "origen": "Landing",
-        "conversaciones": 2,
+        "conversaciones": 3,
         "factura_total": 0,
         "factura_chat": 0,
         "factura_dades": 0,
@@ -157,16 +184,32 @@
     ],
     "closure": [
       {
-        "tipologia": "Automatitzada",
-        "total": 6
-      },
-      {
         "tipologia": "Error generic",
-        "total": 5
+        "total": 4
       },
       {
         "tipologia": "Handoff - Sense motiu",
+        "total": 4
+      },
+      {
+        "tipologia": "Automatitzada",
         "total": 3
+      },
+      {
+        "tipologia": "No cotitzable",
+        "total": 1
+      },
+      {
+        "tipologia": "Massa reintents",
+        "total": 1
+      },
+      {
+        "tipologia": "Ahorro negatiu",
+        "total": 1
+      },
+      {
+        "tipologia": "Error arxiu factura",
+        "total": 1
       }
     ],
     "incorrect": {
@@ -389,16 +432,29 @@
     },
     {
       "semana": "2026-09-28",
-      "conversaciones": 11,
+      "conversaciones": 15,
       "cotitzacions": 0,
       "contractes": 0
     }
   ],
   "raw": [
     {
-      "conversation_id": "01a0f667-8380-7232-8470-ee312b8281c0",
+      "conversation_id": "01a0f868-20c1-7202-bdc2-41ae07a1eae5",
       "fecha": "2026-10-01",
       "origen": "WA",
+      "factura": 1,
+      "factura_chat": 1,
+      "factura_dades": 0,
+      "cotizacion": 0,
+      "contrato": 0,
+      "contrato_luz": 0,
+      "contrato_gas": 0,
+      "tipologia": "Handoff - Sin motivo"
+    },
+    {
+      "conversation_id": "01a0f89b-a756-7dd1-b44d-ef304090ce49",
+      "fecha": "2026-10-01",
+      "origen": "Landing",
       "factura": 0,
       "factura_chat": 0,
       "factura_dades": 0,
@@ -406,7 +462,46 @@
       "contrato": 0,
       "contrato_luz": 0,
       "contrato_gas": 0,
-      "tipologia": "Automatizada"
+      "tipologia": "Error archivo factura"
+    },
+    {
+      "conversation_id": "01a0f7d5-6453-72a0-a85f-393d23c8c4c4",
+      "fecha": "2026-10-01",
+      "origen": "WA",
+      "factura": 1,
+      "factura_chat": 1,
+      "factura_dades": 0,
+      "cotizacion": 0,
+      "contrato": 0,
+      "contrato_luz": 0,
+      "contrato_gas": 0,
+      "tipologia": "Demasiados reintentos"
+    },
+    {
+      "conversation_id": "01a0f7c6-86f8-7d50-b242-08ad42632c9d",
+      "fecha": "2026-10-01",
+      "origen": "WA",
+      "factura": 1,
+      "factura_chat": 1,
+      "factura_dades": 1,
+      "cotizacion": 0,
+      "contrato": 0,
+      "contrato_luz": 0,
+      "contrato_gas": 0,
+      "tipologia": "Ahorro negativo"
+    },
+    {
+      "conversation_id": "01a0f667-8380-7232-8470-ee312b8281c0",
+      "fecha": "2026-10-01",
+      "origen": "WA",
+      "factura": 1,
+      "factura_chat": 1,
+      "factura_dades": 0,
+      "cotizacion": 0,
+      "contrato": 0,
+      "contrato_luz": 0,
+      "contrato_gas": 0,
+      "tipologia": "No cotizable"
     },
     {
       "conversation_id": "01a0f21b-1c39-74c3-ae4d-72fdfe3cf9b1",
