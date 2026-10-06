@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-10-05T12:10:27Z",
+  "generated_at": "2026-10-06T11:54:21Z",
   "all": {
     "date_from": "2026-01-31",
-    "date_to": "2026-10-06",
+    "date_to": "2026-10-07",
     "funnel": [
       {
         "origen": "Landing",
@@ -101,7 +101,7 @@
   },
   "month": {
     "date_from": "2026-10-01",
-    "date_to": "2026-10-06",
+    "date_to": "2026-10-07",
     "funnel": [
       {
         "origen": "WA",
@@ -160,14 +160,14 @@
     }
   },
   "week": {
-    "date_from": "2026-09-29",
-    "date_to": "2026-10-06",
+    "date_from": "2026-09-30",
+    "date_to": "2026-10-07",
     "funnel": [
       {
         "origen": "WA",
-        "conversaciones": 15,
-        "factura_total": 12,
-        "factura_chat": 12,
+        "conversaciones": 11,
+        "factura_total": 10,
+        "factura_chat": 10,
         "factura_dades": 2,
         "cotitzacions": 0,
         "contractes": 0,
@@ -176,7 +176,7 @@
       },
       {
         "origen": "Landing",
-        "conversaciones": 5,
+        "conversaciones": 3,
         "factura_total": 2,
         "factura_chat": 2,
         "factura_dades": 0,
@@ -188,19 +188,15 @@
     ],
     "closure": [
       {
-        "tipologia": "Handoff - Sense motiu",
-        "total": 6
-      },
-      {
         "tipologia": "No cotitzable",
         "total": 4
       },
       {
-        "tipologia": "Error generic",
-        "total": 4
+        "tipologia": "Handoff - Sense motiu",
+        "total": 3
       },
       {
-        "tipologia": "Automatitzada",
+        "tipologia": "Error generic",
         "total": 2
       },
       {
@@ -209,6 +205,10 @@
       },
       {
         "tipologia": "Ahorro negatiu",
+        "total": 1
+      },
+      {
+        "tipologia": "Automatitzada",
         "total": 1
       },
       {
