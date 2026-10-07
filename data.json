@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-10-06T11:54:21Z",
+  "generated_at": "2026-10-07T11:38:58Z",
   "all": {
     "date_from": "2026-01-31",
-    "date_to": "2026-10-07",
+    "date_to": "2026-10-08",
     "funnel": [
       {
         "origen": "Landing",
@@ -101,7 +101,7 @@
   },
   "month": {
     "date_from": "2026-10-01",
-    "date_to": "2026-10-07",
+    "date_to": "2026-10-08",
     "funnel": [
       {
         "origen": "WA",
@@ -160,14 +160,14 @@
     }
   },
   "week": {
-    "date_from": "2026-09-30",
-    "date_to": "2026-10-07",
+    "date_from": "2026-10-01",
+    "date_to": "2026-10-08",
     "funnel": [
       {
         "origen": "WA",
-        "conversaciones": 11,
-        "factura_total": 10,
-        "factura_chat": 10,
+        "conversaciones": 8,
+        "factura_total": 8,
+        "factura_chat": 8,
         "factura_dades": 2,
         "cotitzacions": 0,
         "contractes": 0,
@@ -196,19 +196,11 @@
         "total": 3
       },
       {
-        "tipologia": "Error generic",
-        "total": 2
-      },
-      {
         "tipologia": "Massa reintents",
         "total": 1
       },
       {
         "tipologia": "Ahorro negatiu",
-        "total": 1
-      },
-      {
-        "tipologia": "Automatitzada",
         "total": 1
       },
       {
