@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-10-07T11:38:58Z",
+  "generated_at": "2026-10-08T11:53:53Z",
   "all": {
     "date_from": "2026-01-31",
-    "date_to": "2026-10-08",
+    "date_to": "2026-10-09",
     "funnel": [
       {
         "origen": "Landing",
@@ -17,10 +17,10 @@
       },
       {
         "origen": "WA",
-        "conversaciones": 1224,
-        "factura_total": 830,
-        "factura_chat": 698,
-        "factura_dades": 490,
+        "conversaciones": 1225,
+        "factura_total": 831,
+        "factura_chat": 699,
+        "factura_dades": 491,
         "cotitzacions": 306,
         "contractes": 58,
         "contractes_llum": 47,
@@ -57,7 +57,7 @@
       },
       {
         "tipologia": "Ahorro negatiu",
-        "total": 188
+        "total": 189
       },
       {
         "tipologia": "Massa reintents",
@@ -101,14 +101,14 @@
   },
   "month": {
     "date_from": "2026-10-01",
-    "date_to": "2026-10-08",
+    "date_to": "2026-10-09",
     "funnel": [
       {
         "origen": "WA",
-        "conversaciones": 8,
-        "factura_total": 8,
-        "factura_chat": 8,
-        "factura_dades": 2,
+        "conversaciones": 9,
+        "factura_total": 9,
+        "factura_chat": 9,
+        "factura_dades": 3,
         "cotitzacions": 0,
         "contractes": 0,
         "contractes_llum": 0,
@@ -136,11 +136,11 @@
         "total": 3
       },
       {
-        "tipologia": "Massa reintents",
-        "total": 1
+        "tipologia": "Ahorro negatiu",
+        "total": 2
       },
       {
-        "tipologia": "Ahorro negatiu",
+        "tipologia": "Massa reintents",
         "total": 1
       },
       {
@@ -160,14 +160,14 @@
     }
   },
   "week": {
-    "date_from": "2026-10-01",
-    "date_to": "2026-10-08",
+    "date_from": "2026-10-02",
+    "date_to": "2026-10-09",
     "funnel": [
       {
         "origen": "WA",
-        "conversaciones": 8,
-        "factura_total": 8,
-        "factura_chat": 8,
+        "conversaciones": 6,
+        "factura_total": 5,
+        "factura_chat": 5,
         "factura_dades": 2,
         "cotitzacions": 0,
         "contractes": 0,
@@ -176,7 +176,7 @@
       },
       {
         "origen": "Landing",
-        "conversaciones": 3,
+        "conversaciones": 2,
         "factura_total": 2,
         "factura_chat": 2,
         "factura_dades": 0,
@@ -189,11 +189,11 @@
     "closure": [
       {
         "tipologia": "No cotitzable",
-        "total": 4
+        "total": 3
       },
       {
         "tipologia": "Handoff - Sense motiu",
-        "total": 3
+        "total": 2
       },
       {
         "tipologia": "Massa reintents",
@@ -201,10 +201,6 @@
       },
       {
         "tipologia": "Ahorro negatiu",
-        "total": 1
-      },
-      {
-        "tipologia": "Error arxiu factura",
         "total": 1
       },
       {
@@ -438,12 +434,25 @@
     },
     {
       "semana": "2026-10-05",
-      "conversaciones": 1,
+      "conversaciones": 2,
       "cotitzacions": 0,
       "contractes": 0
     }
   ],
   "raw": [
+    {
+      "conversation_id": "01a11a83-d2cc-7f90-98d5-9d8dee4bed03",
+      "fecha": "2026-10-08",
+      "origen": "WA",
+      "factura": 1,
+      "factura_chat": 1,
+      "factura_dades": 1,
+      "cotizacion": 0,
+      "contrato": 0,
+      "contrato_luz": 0,
+      "contrato_gas": 0,
+      "tipologia": "Ahorro negativo"
+    },
     {
       "conversation_id": "01a10add-7eb1-7dd0-bb0c-ad6f44b7edef",
       "fecha": "2026-10-05",
