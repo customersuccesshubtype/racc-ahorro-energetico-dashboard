@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-10-08T11:53:53Z",
+  "generated_at": "2026-10-09T11:45:35Z",
   "all": {
     "date_from": "2026-01-31",
-    "date_to": "2026-10-09",
+    "date_to": "2026-10-10",
     "funnel": [
       {
         "origen": "Landing",
-        "conversaciones": 1530,
-        "factura_total": 1021,
-        "factura_chat": 831,
+        "conversaciones": 1531,
+        "factura_total": 1022,
+        "factura_chat": 832,
         "factura_dades": 656,
         "cotitzacions": 424,
         "contractes": 69,
@@ -17,7 +17,7 @@
       },
       {
         "origen": "WA",
-        "conversaciones": 1225,
+        "conversaciones": 1226,
         "factura_total": 831,
         "factura_chat": 699,
         "factura_dades": 491,
@@ -45,7 +45,7 @@
       },
       {
         "tipologia": "No cotitzable",
-        "total": 419
+        "total": 420
       },
       {
         "tipologia": "Handoff - Sense motiu",
@@ -61,7 +61,7 @@
       },
       {
         "tipologia": "Massa reintents",
-        "total": 185
+        "total": 186
       },
       {
         "tipologia": "Sense estalvi (llum)",
@@ -101,11 +101,11 @@
   },
   "month": {
     "date_from": "2026-10-01",
-    "date_to": "2026-10-09",
+    "date_to": "2026-10-10",
     "funnel": [
       {
         "origen": "WA",
-        "conversaciones": 9,
+        "conversaciones": 10,
         "factura_total": 9,
         "factura_chat": 9,
         "factura_dades": 3,
@@ -116,9 +116,9 @@
       },
       {
         "origen": "Landing",
-        "conversaciones": 3,
-        "factura_total": 2,
-        "factura_chat": 2,
+        "conversaciones": 4,
+        "factura_total": 3,
+        "factura_chat": 3,
         "factura_dades": 0,
         "cotitzacions": 0,
         "contractes": 0,
@@ -129,19 +129,19 @@
     "closure": [
       {
         "tipologia": "No cotitzable",
-        "total": 4
+        "total": 5
       },
       {
         "tipologia": "Handoff - Sense motiu",
         "total": 3
       },
       {
-        "tipologia": "Ahorro negatiu",
+        "tipologia": "Massa reintents",
         "total": 2
       },
       {
-        "tipologia": "Massa reintents",
-        "total": 1
+        "tipologia": "Ahorro negatiu",
+        "total": 2
       },
       {
         "tipologia": "Error arxiu factura",
@@ -160,14 +160,14 @@
     }
   },
   "week": {
-    "date_from": "2026-10-02",
-    "date_to": "2026-10-09",
+    "date_from": "2026-10-03",
+    "date_to": "2026-10-10",
     "funnel": [
       {
         "origen": "WA",
-        "conversaciones": 6,
-        "factura_total": 5,
-        "factura_chat": 5,
+        "conversaciones": 4,
+        "factura_total": 3,
+        "factura_chat": 3,
         "factura_dades": 2,
         "cotitzacions": 0,
         "contractes": 0,
@@ -189,10 +189,6 @@
     "closure": [
       {
         "tipologia": "No cotitzable",
-        "total": 3
-      },
-      {
-        "tipologia": "Handoff - Sense motiu",
         "total": 2
       },
       {
@@ -201,6 +197,10 @@
       },
       {
         "tipologia": "Ahorro negatiu",
+        "total": 1
+      },
+      {
+        "tipologia": "Handoff - Sense motiu",
         "total": 1
       },
       {
@@ -434,12 +434,38 @@
     },
     {
       "semana": "2026-10-05",
-      "conversaciones": 2,
+      "conversaciones": 4,
       "cotitzacions": 0,
       "contractes": 0
     }
   ],
   "raw": [
+    {
+      "conversation_id": "01a12050-f31d-7a50-83eb-35b63de402a2",
+      "fecha": "2026-10-09",
+      "origen": "Landing",
+      "factura": 1,
+      "factura_chat": 1,
+      "factura_dades": 0,
+      "cotizacion": 0,
+      "contrato": 0,
+      "contrato_luz": 0,
+      "contrato_gas": 0,
+      "tipologia": "No cotizable"
+    },
+    {
+      "conversation_id": "01a11bab-19e0-74e1-9cf5-a90866d1f940",
+      "fecha": "2026-10-08",
+      "origen": "WA",
+      "factura": 0,
+      "factura_chat": 0,
+      "factura_dades": 0,
+      "cotizacion": 0,
+      "contrato": 0,
+      "contrato_luz": 0,
+      "contrato_gas": 0,
+      "tipologia": "Demasiados reintentos"
+    },
     {
       "conversation_id": "01a11a83-d2cc-7f90-98d5-9d8dee4bed03",
       "fecha": "2026-10-08",
