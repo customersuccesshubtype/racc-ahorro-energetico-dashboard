@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-10-09T11:45:35Z",
+  "generated_at": "2026-10-10T11:03:22Z",
   "all": {
     "date_from": "2026-01-31",
-    "date_to": "2026-10-10",
+    "date_to": "2026-10-11",
     "funnel": [
       {
         "origen": "Landing",
@@ -101,7 +101,7 @@
   },
   "month": {
     "date_from": "2026-10-01",
-    "date_to": "2026-10-10",
+    "date_to": "2026-10-11",
     "funnel": [
       {
         "origen": "WA",
@@ -160,8 +160,8 @@
     }
   },
   "week": {
-    "date_from": "2026-10-03",
-    "date_to": "2026-10-10",
+    "date_from": "2026-10-04",
+    "date_to": "2026-10-11",
     "funnel": [
       {
         "origen": "WA",
@@ -176,9 +176,9 @@
       },
       {
         "origen": "Landing",
-        "conversaciones": 2,
-        "factura_total": 2,
-        "factura_chat": 2,
+        "conversaciones": 1,
+        "factura_total": 1,
+        "factura_chat": 1,
         "factura_dades": 0,
         "cotitzacions": 0,
         "contractes": 0,
@@ -189,7 +189,7 @@
     "closure": [
       {
         "tipologia": "No cotitzable",
-        "total": 2
+        "total": 1
       },
       {
         "tipologia": "Massa reintents",
