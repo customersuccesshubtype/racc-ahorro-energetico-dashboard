@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-10-17T09:07:58Z",
+  "generated_at": "2026-10-18T09:25:21Z",
   "all": {
     "date_from": "2026-01-31",
-    "date_to": "2026-10-18",
+    "date_to": "2026-10-19",
     "funnel": [
       {
         "origen": "Landing",
-        "conversaciones": 1534,
-        "factura_total": 1025,
-        "factura_chat": 835,
+        "conversaciones": 1535,
+        "factura_total": 1026,
+        "factura_chat": 836,
         "factura_dades": 657,
         "cotitzacions": 424,
         "contractes": 69,
@@ -45,7 +45,7 @@
       },
       {
         "tipologia": "No cotitzable",
-        "total": 422
+        "total": 423
       },
       {
         "tipologia": "Handoff - Sense motiu",
@@ -101,7 +101,7 @@
   },
   "month": {
     "date_from": "2026-10-01",
-    "date_to": "2026-10-18",
+    "date_to": "2026-10-19",
     "funnel": [
       {
         "origen": "WA",
@@ -116,9 +116,9 @@
       },
       {
         "origen": "Landing",
-        "conversaciones": 7,
-        "factura_total": 6,
-        "factura_chat": 6,
+        "conversaciones": 8,
+        "factura_total": 7,
+        "factura_chat": 7,
         "factura_dades": 1,
         "cotitzacions": 0,
         "contractes": 0,
@@ -129,7 +129,7 @@
     "closure": [
       {
         "tipologia": "No cotitzable",
-        "total": 7
+        "total": 8
       },
       {
         "tipologia": "Handoff - Sense motiu",
@@ -164,8 +164,8 @@
     }
   },
   "week": {
-    "date_from": "2026-10-11",
-    "date_to": "2026-10-18",
+    "date_from": "2026-10-12",
+    "date_to": "2026-10-19",
     "funnel": [
       {
         "origen": "WA",
@@ -444,12 +444,25 @@
     },
     {
       "semana": "2026-10-12",
-      "conversaciones": 10,
+      "conversaciones": 11,
       "cotitzacions": 0,
       "contractes": 0
     }
   ],
   "raw": [
+    {
+      "conversation_id": "01a149d9-8d8e-7d40-a5f7-23d7afe6ca4d",
+      "fecha": "2026-10-17",
+      "origen": "Landing",
+      "factura": 1,
+      "factura_chat": 1,
+      "factura_dades": 0,
+      "cotizacion": 0,
+      "contrato": 0,
+      "contrato_luz": 0,
+      "contrato_gas": 0,
+      "tipologia": "No cotizable"
+    },
     {
       "conversation_id": "01a14496-a498-70d0-ac24-ad7d69071538",
       "fecha": "2026-10-16",
