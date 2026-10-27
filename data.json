@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-10-26T10:55:03Z",
+  "generated_at": "2026-10-27T10:19:19Z",
   "all": {
     "date_from": "2026-01-31",
-    "date_to": "2026-10-27",
+    "date_to": "2026-10-28",
     "funnel": [
       {
         "origen": "Landing",
@@ -17,9 +17,9 @@
       },
       {
         "origen": "WA",
-        "conversaciones": 1251,
-        "factura_total": 846,
-        "factura_chat": 711,
+        "conversaciones": 1255,
+        "factura_total": 848,
+        "factura_chat": 713,
         "factura_dades": 497,
         "cotitzacions": 307,
         "contractes": 58,
@@ -41,7 +41,7 @@
     "closure": [
       {
         "tipologia": "Automatitzada",
-        "total": 1632
+        "total": 1633
       },
       {
         "tipologia": "No cotitzable",
@@ -49,11 +49,11 @@
       },
       {
         "tipologia": "Handoff - Sense motiu",
-        "total": 330
+        "total": 329
       },
       {
         "tipologia": "Error arxiu factura",
-        "total": 218
+        "total": 220
       },
       {
         "tipologia": "Ahorro negatiu",
@@ -61,7 +61,7 @@
       },
       {
         "tipologia": "Massa reintents",
-        "total": 188
+        "total": 190
       },
       {
         "tipologia": "Sense estalvi (llum)",
@@ -101,13 +101,13 @@
   },
   "month": {
     "date_from": "2026-10-01",
-    "date_to": "2026-10-27",
+    "date_to": "2026-10-28",
     "funnel": [
       {
         "origen": "WA",
-        "conversaciones": 35,
-        "factura_total": 24,
-        "factura_chat": 21,
+        "conversaciones": 39,
+        "factura_total": 26,
+        "factura_chat": 23,
         "factura_dades": 9,
         "cotitzacions": 1,
         "contractes": 0,
@@ -132,24 +132,24 @@
         "total": 12
       },
       {
-        "tipologia": "Handoff - Sense motiu",
+        "tipologia": "Automatitzada",
         "total": 10
       },
       {
-        "tipologia": "Automatitzada",
+        "tipologia": "Handoff - Sense motiu",
         "total": 9
+      },
+      {
+        "tipologia": "Massa reintents",
+        "total": 6
       },
       {
         "tipologia": "Ahorro negatiu",
         "total": 6
       },
       {
-        "tipologia": "Massa reintents",
-        "total": 4
-      },
-      {
         "tipologia": "Error arxiu factura",
-        "total": 3
+        "total": 5
       },
       {
         "tipologia": "Sense estalvi (llum)",
@@ -168,14 +168,14 @@
     }
   },
   "week": {
-    "date_from": "2026-10-20",
-    "date_to": "2026-10-27",
+    "date_from": "2026-10-21",
+    "date_to": "2026-10-28",
     "funnel": [
       {
         "origen": "WA",
-        "conversaciones": 10,
-        "factura_total": 6,
-        "factura_chat": 5,
+        "conversaciones": 14,
+        "factura_total": 8,
+        "factura_chat": 7,
         "factura_dades": 3,
         "cotitzacions": 0,
         "contractes": 0,
@@ -184,10 +184,10 @@
       },
       {
         "origen": "Landing",
-        "conversaciones": 4,
-        "factura_total": 3,
-        "factura_chat": 3,
-        "factura_dades": 2,
+        "conversaciones": 3,
+        "factura_total": 2,
+        "factura_chat": 2,
+        "factura_dades": 1,
         "cotitzacions": 1,
         "contractes": 0,
         "contractes_llum": 0,
@@ -197,10 +197,18 @@
     "closure": [
       {
         "tipologia": "Automatitzada",
+        "total": 5
+      },
+      {
+        "tipologia": "Error arxiu factura",
         "total": 4
       },
       {
         "tipologia": "No cotitzable",
+        "total": 2
+      },
+      {
+        "tipologia": "Massa reintents",
         "total": 2
       },
       {
@@ -209,15 +217,11 @@
       },
       {
         "tipologia": "Sense estalvi (llum)",
-        "total": 2
+        "total": 1
       },
       {
         "tipologia": "Handoff - Sense motiu",
-        "total": 2
-      },
-      {
-        "tipologia": "Error arxiu factura",
-        "total": 2
+        "total": 1
       }
     ],
     "incorrect": {
@@ -464,12 +468,64 @@
     },
     {
       "semana": "2026-10-26",
-      "conversaciones": 1,
+      "conversaciones": 5,
       "cotitzacions": 0,
       "contractes": 0
     }
   ],
   "raw": [
+    {
+      "conversation_id": "01a178e0-3640-75e3-86e1-190c209339d3",
+      "fecha": "2026-10-26",
+      "origen": "WA",
+      "factura": 1,
+      "factura_chat": 1,
+      "factura_dades": 0,
+      "cotizacion": 0,
+      "contrato": 0,
+      "contrato_luz": 0,
+      "contrato_gas": 0,
+      "tipologia": "Error archivo factura"
+    },
+    {
+      "conversation_id": "01a17830-3c50-70a0-9ec3-431294e292ff",
+      "fecha": "2026-10-26",
+      "origen": "WA",
+      "factura": 0,
+      "factura_chat": 0,
+      "factura_dades": 0,
+      "cotizacion": 0,
+      "contrato": 0,
+      "contrato_luz": 0,
+      "contrato_gas": 0,
+      "tipologia": "Demasiados reintentos"
+    },
+    {
+      "conversation_id": "01a17826-fa44-7890-9d69-fd590083a2df",
+      "fecha": "2026-10-26",
+      "origen": "WA",
+      "factura": 0,
+      "factura_chat": 0,
+      "factura_dades": 0,
+      "cotizacion": 0,
+      "contrato": 0,
+      "contrato_luz": 0,
+      "contrato_gas": 0,
+      "tipologia": "Automatizada"
+    },
+    {
+      "conversation_id": "01a177f1-2a04-7a81-86ee-e76305ad9602",
+      "fecha": "2026-10-26",
+      "origen": "WA",
+      "factura": 0,
+      "factura_chat": 0,
+      "factura_dades": 0,
+      "cotizacion": 0,
+      "contrato": 0,
+      "contrato_luz": 0,
+      "contrato_gas": 0,
+      "tipologia": "Demasiados reintentos"
+    },
     {
       "conversation_id": "01a17711-5561-7d31-a192-2a9b51ae0f16",
       "fecha": "2026-10-26",
@@ -487,14 +543,14 @@
       "conversation_id": "01a16eaa-57cd-7680-83e9-07c8d47f9810",
       "fecha": "2026-10-25",
       "origen": "WA",
-      "factura": 0,
-      "factura_chat": 0,
+      "factura": 1,
+      "factura_chat": 1,
       "factura_dades": 0,
       "cotizacion": 0,
       "contrato": 0,
       "contrato_luz": 0,
       "contrato_gas": 0,
-      "tipologia": "Handoff - Sin motivo"
+      "tipologia": "Error archivo factura"
     },
     {
       "conversation_id": "01a1718d-426e-7d93-b452-c6c1f57c11c8",
