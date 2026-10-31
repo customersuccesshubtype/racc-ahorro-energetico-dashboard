@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-10-30T11:15:58Z",
+  "generated_at": "2026-10-31T10:48:55Z",
   "all": {
     "date_from": "2026-01-31",
-    "date_to": "2026-10-31",
+    "date_to": "2026-11-01",
     "funnel": [
       {
         "origen": "Landing",
@@ -101,7 +101,7 @@
   },
   "month": {
     "date_from": "2026-10-01",
-    "date_to": "2026-10-31",
+    "date_to": "2026-11-01",
     "funnel": [
       {
         "origen": "WA",
@@ -168,12 +168,12 @@
     }
   },
   "week": {
-    "date_from": "2026-10-24",
-    "date_to": "2026-10-31",
+    "date_from": "2026-10-25",
+    "date_to": "2026-11-01",
     "funnel": [
       {
         "origen": "WA",
-        "conversaciones": 10,
+        "conversaciones": 9,
         "factura_total": 5,
         "factura_chat": 5,
         "factura_dades": 2,
@@ -196,15 +196,15 @@
     ],
     "closure": [
       {
-        "tipologia": "Error arxiu factura",
-        "total": 4
-      },
-      {
         "tipologia": "Massa reintents",
         "total": 3
       },
       {
         "tipologia": "Automatitzada",
+        "total": 3
+      },
+      {
+        "tipologia": "Error arxiu factura",
         "total": 3
       },
       {
