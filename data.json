@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-11-13T12:56:46Z",
+  "generated_at": "2026-11-14T12:00:01Z",
   "all": {
     "date_from": "2026-01-31",
-    "date_to": "2026-11-14",
+    "date_to": "2026-11-15",
     "funnel": [
       {
         "origen": "Landing",
@@ -101,7 +101,7 @@
   },
   "month": {
     "date_from": "2026-11-01",
-    "date_to": "2026-11-14",
+    "date_to": "2026-11-15",
     "funnel": [
       {
         "origen": "WA",
@@ -160,14 +160,14 @@
     }
   },
   "week": {
-    "date_from": "2026-11-07",
-    "date_to": "2026-11-14",
+    "date_from": "2026-11-08",
+    "date_to": "2026-11-15",
     "funnel": [
       {
         "origen": "WA",
-        "conversaciones": 10,
-        "factura_total": 6,
-        "factura_chat": 6,
+        "conversaciones": 7,
+        "factura_total": 4,
+        "factura_chat": 4,
         "factura_dades": 2,
         "cotitzacions": 2,
         "contractes": 0,
@@ -176,9 +176,9 @@
       },
       {
         "origen": "Landing",
-        "conversaciones": 3,
-        "factura_total": 3,
-        "factura_chat": 3,
+        "conversaciones": 2,
+        "factura_total": 2,
+        "factura_chat": 2,
         "factura_dades": 1,
         "cotitzacions": 1,
         "contractes": 0,
@@ -188,20 +188,16 @@
     ],
     "closure": [
       {
-        "tipologia": "Automatitzada",
-        "total": 4
-      },
-      {
         "tipologia": "Handoff - Sense motiu",
-        "total": 4
+        "total": 3
       },
       {
         "tipologia": "No cotitzable",
         "total": 2
       },
       {
-        "tipologia": "Massa reintents",
-        "total": 1
+        "tipologia": "Automatitzada",
+        "total": 2
       },
       {
         "tipologia": "Ahorro negatiu",
